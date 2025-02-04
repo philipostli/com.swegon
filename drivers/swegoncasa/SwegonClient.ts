@@ -38,51 +38,6 @@ class SwegonClient {
     this.logger = logger;
   }
 
-  private async getWebsocketConfig(
-    deviceId: string,
-  ): Promise<SwegonWebsocketConfig> {
-    if (!this.token) {
-      throw new Error('Cannot get websocket config before login is successful');
-    }
-
-    try {
-      const url = `https://oulite.ouman.io/socket.io/?EIO=4&transport=websocket&token=${
-        this.token
-      }&deviceid=${deviceId}&t=${this.timestamp.getTime() / 1000}`;
-
-      this.logger.info('Getting Websocket Config');
-
-      const result = await axios.get<string>(url, {
-        headers: {
-          Origin: SwegonCasaOrigin,
-        },
-      });
-      const config = result.data.split(',');
-
-      this.logger.info('Websocket config retrieved', config);
-
-      if (config.length > 0) {
-        const wsConfig = config[0].split(':');
-        const transports = ['websocket', ...config.slice(1)];
-
-        return {
-          id: wsConfig[0],
-          timeout: parseInt(wsConfig[1], 10),
-          interval: parseInt(wsConfig[2], 10),
-          transports,
-        };
-      }
-    } catch (err) {
-      this.logger.error(err);
-
-      if (axios.isAxiosError(err)) {
-        throw new Error(`Unable to connect to the API, ${err.message}`);
-      }
-    }
-
-    throw new Error('Unable to connect to the API, no config was returned');
-  }
-
   public onMode(callback: (data: Mode) => Promise<void>): void {
     this.eventHandler.on('mode', async (data) => callback(data));
   }
@@ -118,7 +73,7 @@ class SwegonClient {
 
       this.logger.debug('Sending message to Swegon', writeArgs);
 
-      this.ws.send(`5:::${JSON.stringify(writeArgs)}`);
+      this.ws.send(`42${JSON.stringify(writeArgs)}`);
     }
   }
 
@@ -134,7 +89,7 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('112', 0))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(travelArgs)}`);
+        this.ws.send(`42${JSON.stringify(travelArgs)}`);
       }
 
       // Reset Fireplace mode if currently in Fireplace mode
@@ -148,8 +103,8 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('154', 0))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(fireplaceArgs)}`);
-        this.ws.send(`5:::${JSON.stringify(fireplaceArgs2)}`);
+        this.ws.send(`42${JSON.stringify(fireplaceArgs)}`);
+        this.ws.send(`42${JSON.stringify(fireplaceArgs2)}`);
       }
 
       // Set fan speed value
@@ -170,7 +125,7 @@ class SwegonClient {
         this.logger.info(`Setting Fan Speed to ${newValue}`);
         this.logger.debug('Sending message to Swegon', fanSpeedArgs);
 
-        this.ws.send(`5:::${JSON.stringify(fanSpeedArgs)}`);
+        this.ws.send(`42${JSON.stringify(fanSpeedArgs)}`);
       }
 
       // Turn on
@@ -190,8 +145,8 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('156', 1))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(onArgs)}`);
-        this.ws.send(`5:::${JSON.stringify(onArgs2)}`);
+        this.ws.send(`42${JSON.stringify(onArgs)}`);
+        this.ws.send(`42${JSON.stringify(onArgs2)}`);
       }
 
       // Turn off
@@ -205,7 +160,7 @@ class SwegonClient {
           ],
         };
 
-        this.ws.send(`5:::${JSON.stringify(offArgs)}`);
+        this.ws.send(`42${JSON.stringify(offArgs)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
@@ -215,7 +170,7 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('116', 1))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(boostArgs)}`);
+        this.ws.send(`42${JSON.stringify(boostArgs)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
@@ -225,7 +180,7 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('153', 1))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(fireplaceArgs)}`);
+        this.ws.send(`42${JSON.stringify(fireplaceArgs)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
@@ -240,8 +195,8 @@ class SwegonClient {
           args: [JSON.stringify(SwegonConstants.WriteArgs('154', 1))],
         };
 
-        this.ws.send(`5:::${JSON.stringify(travelArgs)}`);
-        this.ws.send(`5:::${JSON.stringify(travelArgs2)}`);
+        this.ws.send(`42${JSON.stringify(travelArgs)}`);
+        this.ws.send(`42${JSON.stringify(travelArgs2)}`);
       }
     }
   }
@@ -250,14 +205,10 @@ class SwegonClient {
     try {
       this.timestamp = new Date();
 
-      const cfg = {id: "018341"}//await this.getWebsocketConfig(deviceId);
       const url = `wss://oulite.ouman.io/socket.io/?EIO=4&transport=websocket`;
-      //const url = `wss://oulite.ouman.io/018341`;
 
       this.logger.info(
-        `Connecting to websocket - Url: ${url}, Channel: ${
-          cfg.id
-        }, Device ID: ${deviceId}`,
+        `Connecting to websocket - Url: ${url}, Device ID: ${deviceId}`,
       );
 
       const ws = new WebSocket(url, {
