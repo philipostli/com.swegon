@@ -1,12 +1,17 @@
 {
-  "name": { "en": "Casa W/R Smart Series" },
+  "name": {
+    "en": "Casa W/R Smart Series",
+    "no": "Casa W/R Smart Series"
+  },
   "images": {
     "small": "/drivers/swegoncasa/assets/images/small.png",
     "large": "/drivers/swegoncasa/assets/images/large.png",
     "xlarge": "/drivers/swegoncasa/assets/images/xlarge.png"
   },
   "class": "airtreatment",
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "capabilities": [
     "measure_humidity_percent",
     "measure_humidity_amount",
@@ -19,23 +24,39 @@
     "summer_night_cooling_mode",
     "auto_humidity_control_mode"
   ],
-  "connectivity": ["cloud"],
+  "connectivity": [
+    "cloud"
+  ],
   "pair": [
     {
       "id": "login_credentials",
       "template": "login_credentials",
       "options": {
         "logo": "logo.png",
-        "usernameLabel": { "en": "Username" },
-        "usernamePlaceholder": { "en": "Email" },
-        "passwordLabel": { "en": "Password" },
-        "passwordPlaceholder": { "en": "Password" }
+        "usernameLabel": {
+          "en": "Username",
+          "no": "Brukernavn"
+        },
+        "usernamePlaceholder": {
+          "en": "Email",
+          "no": "E-post"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "no": "Passord"
+        },
+        "passwordPlaceholder": {
+          "en": "Password",
+          "no": "Passord"
+        }
       }
     },
     {
       "id": "list_devices",
       "template": "list_devices",
-      "navigation": { "next": "add_devices" }
+      "navigation": {
+        "next": "add_devices"
+      }
     },
     {
       "id": "add_devices",

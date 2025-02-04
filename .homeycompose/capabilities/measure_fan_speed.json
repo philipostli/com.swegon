@@ -2,26 +2,30 @@
   "type": "enum",
   "uiComponent": "sensor",
   "title": {
-    "en": "Fan Mode"
+    "en": "Fan Mode",
+    "no": "Viftemodus"
   },
   "icon": "/assets/fan.svg",
   "values": [
     {
       "id": "1",
       "title": {
-        "en": "Low"
+        "en": "Low",
+        "no": "Lav"
       }
     },
     {
       "id": "2",
       "title": {
-        "en": "Normal"
+        "en": "Normal",
+        "no": "Normal"
       }
     },
     {
       "id": "3",
       "title": {
-        "en": "High"
+        "en": "High",
+        "no": "Høy"
       }
     }
   ],

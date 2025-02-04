@@ -2,7 +2,8 @@
   "type": "enum",
   "uiComponent": "picker",
   "title": {
-    "en": "Auto Humidity Control Mode"
+    "en": "Auto Humidity Control Mode",
+    "no": "Automatisk luftfuktighet modus"
   },
   "desc": {
     "en": "The current auto humidity control mode"
@@ -12,32 +13,50 @@
     {
       "id": "off",
       "value": 0,
-      "title": { "en": "Off" }
+      "title": {
+        "en": "Off",
+        "no": "Av"
+      }
     },
     {
       "id": "user",
       "value": 1,
-      "title": { "en": "User" }
+      "title": {
+        "en": "User",
+        "no": "Bruker"
+      }
     },
     {
       "id": "low",
       "value": 2,
-      "title": { "en": "Low" }
+      "title": {
+        "en": "Low",
+        "no": "Lav"
+      }
     },
     {
       "id": "normal",
       "value": 3,
-      "title": { "en": "Normal" }
+      "title": {
+        "en": "Normal",
+        "no": "Normal"
+      }
     },
     {
       "id": "high",
       "value": 4,
-      "title": { "en": "High" }
+      "title": {
+        "en": "High",
+        "no": "Høy"
+      }
     },
     {
       "id": "full",
       "value": 5,
-      "title": { "en": "Full" }
+      "title": {
+        "en": "Full",
+        "no": "Full"
+      }
     }
   ],
   "getable": true,

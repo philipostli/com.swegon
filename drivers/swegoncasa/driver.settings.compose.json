@@ -1,46 +1,74 @@
 [
   {
     "type": "group",
-    "label": { "en": "Login Details" },
+    "label": {
+      "en": "Login Details",
+      "no": "Innloggingsdetaljer"
+    },
     "children": [
       {
         "id": "username",
         "type": "text",
-        "label": { "en": "Username" },
+        "label": {
+          "en": "Username",
+          "no": "Brukernavn"
+        },
         "value": "",
-        "hint": { "en": "The swegoncasa.io username." }
+        "hint": {
+          "en": "The swegoncasa.io username.",
+          "no": "Brukernavnet for swegoncasa.io."
+        }
       },
       {
         "id": "password",
         "type": "password",
-        "label": { "en": "Password" },
+        "label": {
+          "en": "Password",
+          "no": "Passord"
+        },
         "value": "",
-        "hint": { "en": "The swegoncasa.io password." }
+        "hint": {
+          "en": "The swegoncasa.io password.",
+          "no": "Passordet for swegoncasa.io."
+        }
       }
     ]
   },
   {
     "type": "group",
-    "label": { "en": "Temperature Control" },
+    "label": {
+      "en": "Temperature Control",
+      "no": "Temperaturkontroll"
+    },
     "children": [
       {
         "id": "temperatureControlMode",
         "type": "dropdown",
         "value": "comfort",
-        "label": { "en": "Supply Temperature Control Mode" },
+        "label": {
+          "en": "Supply Temperature Control Mode",
+          "no": "Temperaturkontroll for innedelen"
+        },
         "hint": {
-          "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency"
+          "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency",
+          "no": "ECO-modus kontrollerer innedelens temperatur for å oppnå beste varme/kjølingseffektivitet"
         },
         "values": [
           {
             "id": "comfort",
             "value": 2,
-            "label": { "en": "Comfort" }
+            "label": {
+              "en": "Comfort",
+              "no": "Komfort"
+            }
           },
           {
             "id": "eco",
             "value": 1,
-            "label": { "en": "Eco" }
+            "label": {
+              "en": "ECO",
+              "no": "ECO"
+            }
           }
         ]
       },
@@ -49,11 +77,16 @@
         "type": "number",
         "value": 20,
         "units": {
-          "en": "°C"
+          "en": "°C",
+          "no": "°C"
         },
-        "label": { "en": "Supply Temperature Setpoint" },
+        "label": {
+          "en": "Supply Temperature Setpoint",
+          "no": "Temperaturinnstilling for innedel"
+        },
         "hint": {
-          "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption."
+          "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption.",
+          "no": "Merk at økning av innedelens temperaturinnstilling vil føre til forringet friskluftblanding og kan øke elektrisk forbruk."
         }
       },
       {
@@ -63,9 +96,13 @@
         "units": {
           "en": "°C"
         },
-        "label": { "en": "Travelling Mode Temperature Drop" },
+        "label": {
+          "en": "Travelling Mode Temperature Drop",
+          "no": "Temperaturnedsetting i reise-modus"
+        },
         "hint": {
-          "en": "Temperature setpoint is lowered by the defined amount in travelling mode."
+          "en": "Temperature setpoint is lowered by the defined amount in travelling mode.",
+          "no": "Temperaturinnstillingen er redusert med den definerte mengden i reise-modus."
         }
       },
       {
@@ -73,57 +110,87 @@
         "type": "number",
         "value": 2,
         "units": {
-          "en": "°C"
+          "en": "°C",
+          "no": "°C"
         },
-        "label": { "en": "Away Mode Temperature Drop" },
+        "label": {
+          "en": "Away Mode Temperature Drop",
+          "no": "Temperaturnedsetting i bortreise-modus"
+        },
         "hint": {
-          "en": "Temperature setpoint is lowered by the defined amount in away mode."
+          "en": "Temperature setpoint is lowered by the defined amount in away mode.",
+          "no": "Temperaturinnstillingen er redusert med den definerte mengden i bortreise-modus."
         }
       }
     ]
   },
   {
     "type": "group",
-    "label": { "en": "Summer Night Cooling" },
+    "label": {
+      "en": "Summer Night Cooling",
+      "no": "Sommernatt avkjøling"
+    },
     "children": [
       {
         "id": "summerNightCoolingBoost",
         "type": "dropdown",
         "value": "off",
-        "label": { "en": "Cooling Level" },
+        "label": {
+          "en": "Cooling Level",
+          "no": "Avkjølingsnivå"
+        },
         "hint": {
-          "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier."
+          "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier.",
+          "no": "Høyere valg tillater kjøling av innedelens lufttemperatur og kjølingen oppdages tidligere."
         },
         "values": [
           {
             "id": "off",
             "value": 0,
-            "label": { "en": "Off" }
+            "label": {
+              "en": "Off",
+              "no": "Av"
+            }
           },
           {
             "id": "low",
             "value": 1,
-            "label": { "en": "Low" }
+            "label": {
+              "en": "Low",
+              "no": "Lav"
+            }
           },
           {
             "id": "normal",
             "value": 2,
-            "label": { "en": "Normal" }
+            "label": {
+              "en": "Normal",
+              "no": "Normal"
+            }
           },
           {
             "id": "high",
             "value": 3,
-            "label": { "en": "High" }
+            "label": {
+                "en": "High",
+              "no": "Høy"
+            }
           },
           {
             "id": "full",
             "value": 4,
-            "label": { "en": "Full" }
+            "label": {
+              "en": "Full",
+              "no": "Full"
+            }
           },
           {
             "id": "user",
             "value": 5,
-            "label": { "en": "User" }
+            "label": {
+              "en": "User",
+              "no": "Bruker"
+            }
           }
         ]
       }
@@ -131,77 +198,119 @@
   },
   {
     "type": "group",
-    "label": { "en": "Auto Humidity Control (User Mode)" },
+    "label": {
+      "en": "Auto Humidity Control (User Mode)",
+      "no": "Automatisk fuktighetskontroll (Bruker-modus)"
+    },
     "children": [
       {
         "id": "autoHumidityControlBoostLimit",
         "type": "number",
         "value": 5,
-        "units": { "en": "%" },
-        "label": { "en": "Boost Limit" },
+        "units": {
+          "en": "%",
+          "no": "%"
+        },
+        "label": {
+          "en": "Boost Limit",
+          "no": "Boostgrense"
+        },
         "hint": {
-          "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts."
+          "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts.",
+          "no": "Reduser boostgrensen hvis du ønsker en raskere respons. Boostgrensen definerer hvor mye fuktighetsverdien må stige over gjennomsnittet, før det ikke-stegede boostet starter."
         }
       },
       {
         "id": "autoHumidityControlFullBoostLimit",
         "type": "number",
         "value": 30,
-        "units": { "en": "%" },
-        "label": { "en": "Full Boost Limit" },
+        "units": {
+          "en": "%",
+          "no": "%"
+        },
+        "label": {
+          "en": "Full Boost Limit",
+          "no": "Full Boostgrense"
+        },
         "hint": {
-          "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached."
+          "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached.",
+          "no": "Reduser full boostgrense hvis du ønsker mer boost. Full boostgrense definerer hvor mye fuktighetsverdien må stige over gjennomsnittet før full boost er oppnådd."
         }
       }
     ]
   },
   {
     "type": "group",
-    "label": { "en": "Device Info" },
+    "label": {
+      "en": "Device Info",
+      "no": "Enhetsinfo"
+    },
     "children": [
       {
         "id": "serialNumber",
         "type": "label",
         "value": "",
-        "label": { "en": "Serial Number" }
+        "label": {
+          "en": "Serial Number",
+          "no": "Serienummer"
+        }
       }
     ]
   },
   {
     "type": "group",
-    "label": { "en": "Connection Info" },
+    "label": {
+      "en": "Connection Info",
+      "no": "Koblinginfo"
+    },
     "children": [
       {
         "id": "connectionId",
         "type": "label",
         "value": "",
-        "label": { "en": "Device ID" }
+        "label": {
+          "en": "Device ID",
+          "no": "Enhets-ID"
+        }
       },
       {
         "id": "connectionName",
         "type": "label",
         "value": "",
-        "label": { "en": "Name" }
+        "label": {
+          "en": "Name",
+          "no": "Navn"
+        }
       },
       {
         "id": "connectionSerialNumber",
         "type": "label",
         "value": "",
-        "label": { "en": "Serial Number" }
+        "label": {
+          "en": "Serial Number",
+          "no": "Serienummer"
+        }
       }
     ]
   },
   {
     "type": "group",
-    "label": { "en": "Debug" },
+    "label": {
+      "en": "Debug",
+      "no": "Feilsøking"
+    },
     "children": [
       {
         "id": "debugMode",
         "type": "checkbox",
         "value": false,
-        "label": { "en": "Debug Mode" },
+        "label": {
+          "en": "Debug Mode",
+          "no": "Feilsøking"
+        },
         "hint": {
-          "en": "You probably don't need to enable this unless you are a developer."
+          "en": "You probably don't need to enable this unless you are a developer.",
+          "no": "Du trenger kanskje ikke aktivere dette dersom du ikke er en utvikler."
         }
       }
     ]

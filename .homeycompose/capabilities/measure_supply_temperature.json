@@ -3,14 +3,17 @@
   "uiComponent": "sensor",
   "icon": "/assets/temperature_supply.svg",
   "title": {
-    "en": "Supply Temperature"
+    "en": "Supply Temperature",
+    "no": "Temperatur innedel"
   },
   "desc": {
-    "en": "The temperature of the air going out from the system into your rooms."
+    "en": "The temperature of the air going out from the system into your rooms.",
+    "no": "Temperatur på luften som går ut fra systemet til rommene dine."
   },
   "decimals": 2,
   "units": {
-    "en": "°C"
+    "en": "°C",
+    "no": "°C"
   },
   "getable": true,
   "setable": false,

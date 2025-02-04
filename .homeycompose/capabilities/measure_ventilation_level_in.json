@@ -3,14 +3,17 @@
   "uiComponent": "sensor",
   "icon": "/assets/fan.svg",
   "title": {
-    "en": "Supply Fan Speed"
+    "en": "Supply Fan Speed",
+    "no": "Viftehastighet innedel"
   },
   "desc": {
-    "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed."
+    "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed.",
+    "no": "Viftehastigheten til innedelen. Er normalt lavere enn viftehastigheten til utsugningsdelen."
   },
   "decimals": 0,
   "units": {
-    "en": "%"
+    "en": "%",
+    "no": "%"
   },
   "getable": true,
   "setable": false,

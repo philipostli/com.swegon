@@ -3,15 +3,18 @@
   "uiComponent": "sensor",
   "icon": "/assets/humidity_percent.svg",
   "title": {
-    "en": "Humidity"
+    "en": "Humidity",
+    "no": "Luftfuktighet"
   },
   "desc": {
-    "en": "Percentage of water in the air"
+    "en": "Percentage of water in the air",
+    "no": "Prosentandel av vann i luften"
   },
   "min": 0,
   "decimals": 2,
   "units": {
-    "en": "%"
+    "en": "%",
+    "no": "%"
   },
   "getable": true,
   "setable": false,

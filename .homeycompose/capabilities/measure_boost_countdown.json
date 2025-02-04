@@ -2,13 +2,16 @@
   "type": "number",
   "uiComponent": null,
   "title": {
-    "en": "Boost Countdown"
+    "en": "Boost Countdown",
+    "no": "Boost nedtelling"
   },
   "desc": {
-    "en": "Time until Boost turns off"
+    "en": "Time until Boost turns off",
+    "no": "Tid til boost modus slutter"
   },
   "units": {
-    "en": "min"
+    "en": "min",
+    "no": "min"
   },
   "decimals": 0,
   "getable": true,

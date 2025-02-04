@@ -3,15 +3,18 @@
   "uiComponent": "sensor",
   "icon": "/assets/humidity_amount.svg",
   "title": {
-    "en": "Humidity"
+    "en": "Humidity",
+    "no": "Luftfuktighet"
   },
   "desc": {
-    "en": "grams per cubic meter"
+    "en": "grams per cubic meter",
+    "no": "gram per kubikkmeter"
   },
   "min": 0,
   "decimals": 2,
   "units": {
-    "en": "g/m³"
+    "en": "g/m³",
+    "no": "g/m³"
   },
   "getable": true,
   "setable": false,

@@ -1,10 +1,12 @@
 {
   "id": "set_climate_mode",
   "title": {
-    "en": "Set Climate Control Mode"
+    "en": "Set Climate Control Mode",
+    "no": "Sett klimaanleggsmodus"
   },
   "titleFormatted": {
-    "en": "Set Climate Control Mode to [[climate_mode]]"
+    "en": "Set Climate Control Mode to [[climate_mode]]",
+    "no": "Sett klimaanleggsmodus til [[climate_mode]]"
   },
   "highlight": true,
   "args": [
@@ -17,43 +19,50 @@
       "name": "climate_mode",
       "type": "dropdown",
       "title": {
-        "en": "Climate Control Mode"
+        "en": "Climate Control Mode",
+        "no": "Klimaanleggsmodus"
       },
       "values": [
         {
           "id": "away",
           "label": {
-            "en": "Away"
+            "en": "Away",
+            "no": "Borte"
           }
         },
         {
           "id": "home",
           "label": {
-            "en": "Home"
+            "en": "Home",
+            "no": "Hjemme"
           }
         },
         {
           "id": "boost",
           "label": {
-            "en": "Boost"
+            "en": "Boost",
+            "no": "Boost"
           }
         },
         {
           "id": "travel",
           "label": {
-            "en": "Travel"
+            "en": "Travel",
+            "no": "Reise"
           }
         },
         {
           "id": "off",
           "label": {
-            "en": "Off"
+            "en": "Off",
+            "no": "Av"
           }
         },
         {
           "id": "fireplace",
           "label": {
-            "en": "Fireplace"
+            "en": "Fireplace",
+            "no": "Peis"
           }
         }
       ]

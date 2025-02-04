@@ -2,7 +2,8 @@
   "type": "enum",
   "uiComponent": "picker",
   "title": {
-    "en": "Climate Control Mode"
+    "en": "Climate Control Mode",
+    "no": "Klima kontroll modus"
   },
   "desc": {
     "en": "The current system mode"
@@ -13,45 +14,52 @@
       "id": "away",
       "value": 1,
       "title": {
-        "en": "Away"
+        "en": "Away",
+        "no": "Borte"
       }
     },
     {
       "id": "home",
       "value": 2,
       "title": {
-        "en": "Home"
+        "en": "Home",
+        "no": "Hjemme"
       }
     },
     {
       "id": "boost",
       "value": 3,
       "title": {
-        "en": "Boost"
+        "en": "Boost",
+        "no": "Boost"
       },
       "desc": {
-        "en": "Boosts the fan speed for 1 hour"
+        "en": "Boosts the fan speed for 1 hour",
+        "no": "Booster viftehastigheten i 1 time"
       }
     },
     {
       "id": "travel",
       "value": 4,
       "title": {
-        "en": "Travel"
+        "en": "Travel",
+        "no": "Reise"
       }
     },
     {
       "id": "off",
       "value": 5,
       "title": {
-        "en": "Off"
+        "en": "Off",
+        "no": "Av"
       }
     },
     {
       "id": "fireplace",
       "value": 6,
       "title": {
-        "en": "Fireplace"
+        "en": "Fireplace",
+        "no": "Peis"
       }
     }
   ],

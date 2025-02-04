@@ -3,14 +3,17 @@
   "uiComponent": "sensor",
   "icon": "/assets/temperature_return.svg",
   "title": {
-    "en": "Return Temperature"
+    "en": "Return Temperature",
+    "no": "Returtemperatur"
   },
   "desc": {
-    "en": "The temperature of the air going back into the system from your rooms."
+    "en": "The temperature of the air going back into the system from your rooms.",
+    "no": "Temperatur på luften som går tilbake til systemet fra rommene dine."
   },
   "decimals": 2,
   "units": {
-    "en": "°C"
+    "en": "°C",
+    "no": "°C"
   },
   "getable": true,
   "setable": false,

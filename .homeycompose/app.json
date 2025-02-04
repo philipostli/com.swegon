@@ -26,6 +26,14 @@
       "hvac",
       "ventilation",
       "air quality"
+    ],
+    "no": [
+      "swegon",
+      "temperaturkontroll",
+      "varme",
+      "hvac",
+      "ventilering",
+      "luftkvalitet"
     ]
   },
   "permissions": [],

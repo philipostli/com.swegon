@@ -27,6 +27,14 @@
       "hvac",
       "ventilation",
       "air quality"
+    ],
+    "no": [
+      "swegon",
+      "temperaturkontroll",
+      "varme",
+      "hvac",
+      "ventilering",
+      "luftkvalitet"
     ]
   },
   "permissions": [],
@@ -51,10 +59,12 @@
       {
         "id": "set_climate_mode",
         "title": {
-          "en": "Set Climate Control Mode"
+          "en": "Set Climate Control Mode",
+          "no": "Sett klimaanleggsmodus"
         },
         "titleFormatted": {
-          "en": "Set Climate Control Mode to [[climate_mode]]"
+          "en": "Set Climate Control Mode to [[climate_mode]]",
+          "no": "Sett klimaanleggsmodus til [[climate_mode]]"
         },
         "highlight": true,
         "args": [
@@ -67,43 +77,50 @@
             "name": "climate_mode",
             "type": "dropdown",
             "title": {
-              "en": "Climate Control Mode"
+              "en": "Climate Control Mode",
+              "no": "Klimaanleggsmodus"
             },
             "values": [
               {
                 "id": "away",
                 "label": {
-                  "en": "Away"
+                  "en": "Away",
+                  "no": "Borte"
                 }
               },
               {
                 "id": "home",
                 "label": {
-                  "en": "Home"
+                  "en": "Home",
+                  "no": "Hjemme"
                 }
               },
               {
                 "id": "boost",
                 "label": {
-                  "en": "Boost"
+                  "en": "Boost",
+                  "no": "Boost"
                 }
               },
               {
                 "id": "travel",
                 "label": {
-                  "en": "Travel"
+                  "en": "Travel",
+                  "no": "Reise"
                 }
               },
               {
                 "id": "off",
                 "label": {
-                  "en": "Off"
+                  "en": "Off",
+                  "no": "Av"
                 }
               },
               {
                 "id": "fireplace",
                 "label": {
-                  "en": "Fireplace"
+                  "en": "Fireplace",
+                  "no": "Peis"
                 }
               }
             ]
@@ -115,7 +132,8 @@
   "drivers": [
     {
       "name": {
-        "en": "Casa W/R Smart Series"
+        "en": "Casa W/R Smart Series",
+        "no": "Casa W/R Smart Series"
       },
       "images": {
         "small": "/drivers/swegoncasa/assets/images/small.png",
@@ -148,16 +166,20 @@
           "options": {
             "logo": "logo.png",
             "usernameLabel": {
-              "en": "Username"
+              "en": "Username",
+              "no": "Brukernavn"
             },
             "usernamePlaceholder": {
-              "en": "Email"
+              "en": "Email",
+              "no": "E-post"
             },
             "passwordLabel": {
-              "en": "Password"
+              "en": "Password",
+              "no": "Passord"
             },
             "passwordPlaceholder": {
-              "en": "Password"
+              "en": "Password",
+              "no": "Passord"
             }
           }
         },
@@ -178,29 +200,34 @@
         {
           "type": "group",
           "label": {
-            "en": "Login Details"
+            "en": "Login Details",
+            "no": "Innloggingsdetaljer"
           },
           "children": [
             {
               "id": "username",
               "type": "text",
               "label": {
-                "en": "Username"
+                "en": "Username",
+                "no": "Brukernavn"
               },
               "value": "",
               "hint": {
-                "en": "The swegoncasa.io username."
+                "en": "The swegoncasa.io username.",
+                "no": "Brukernavnet for swegoncasa.io."
               }
             },
             {
               "id": "password",
               "type": "password",
               "label": {
-                "en": "Password"
+                "en": "Password",
+                "no": "Passord"
               },
               "value": "",
               "hint": {
-                "en": "The swegoncasa.io password."
+                "en": "The swegoncasa.io password.",
+                "no": "Passordet for swegoncasa.io."
               }
             }
           ]
@@ -208,7 +235,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Temperature Control"
+            "en": "Temperature Control",
+            "no": "Temperaturkontroll"
           },
           "children": [
             {
@@ -216,24 +244,28 @@
               "type": "dropdown",
               "value": "comfort",
               "label": {
-                "en": "Supply Temperature Control Mode"
+                "en": "Supply Temperature Control Mode",
+                "no": "Temperaturkontroll for innedelen"
               },
               "hint": {
-                "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency"
+                "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency",
+                "no": "ECO-modus kontrollerer innedelens temperatur for å oppnå beste varme/kjølingseffektivitet"
               },
               "values": [
                 {
                   "id": "comfort",
                   "value": 2,
                   "label": {
-                    "en": "Comfort"
+                    "en": "Comfort",
+                    "no": "Komfort"
                   }
                 },
                 {
                   "id": "eco",
                   "value": 1,
                   "label": {
-                    "en": "Eco"
+                    "en": "ECO",
+                    "no": "ECO"
                   }
                 }
               ]
@@ -243,13 +275,16 @@
               "type": "number",
               "value": 20,
               "units": {
-                "en": "°C"
+                "en": "°C",
+                "no": "°C"
               },
               "label": {
-                "en": "Supply Temperature Setpoint"
+                "en": "Supply Temperature Setpoint",
+                "no": "Temperaturinnstilling for innedel"
               },
               "hint": {
-                "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption."
+                "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption.",
+                "no": "Merk at økning av innedelens temperaturinnstilling vil føre til forringet friskluftblanding og kan øke elektrisk forbruk."
               }
             },
             {
@@ -260,10 +295,12 @@
                 "en": "°C"
               },
               "label": {
-                "en": "Travelling Mode Temperature Drop"
+                "en": "Travelling Mode Temperature Drop",
+                "no": "Temperaturnedsetting i reise-modus"
               },
               "hint": {
-                "en": "Temperature setpoint is lowered by the defined amount in travelling mode."
+                "en": "Temperature setpoint is lowered by the defined amount in travelling mode.",
+                "no": "Temperaturinnstillingen er redusert med den definerte mengden i reise-modus."
               }
             },
             {
@@ -271,13 +308,16 @@
               "type": "number",
               "value": 2,
               "units": {
-                "en": "°C"
+                "en": "°C",
+                "no": "°C"
               },
               "label": {
-                "en": "Away Mode Temperature Drop"
+                "en": "Away Mode Temperature Drop",
+                "no": "Temperaturnedsetting i bortreise-modus"
               },
               "hint": {
-                "en": "Temperature setpoint is lowered by the defined amount in away mode."
+                "en": "Temperature setpoint is lowered by the defined amount in away mode.",
+                "no": "Temperaturinnstillingen er redusert med den definerte mengden i bortreise-modus."
               }
             }
           ]
@@ -285,7 +325,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Summer Night Cooling"
+            "en": "Summer Night Cooling",
+            "no": "Sommernatt avkjøling"
           },
           "children": [
             {
@@ -293,52 +334,60 @@
               "type": "dropdown",
               "value": "off",
               "label": {
-                "en": "Cooling Level"
+                "en": "Cooling Level",
+                "no": "Avkjølingsnivå"
               },
               "hint": {
-                "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier."
+                "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier.",
+                "no": "Høyere valg tillater kjøling av innedelens lufttemperatur og kjølingen oppdages tidligere."
               },
               "values": [
                 {
                   "id": "off",
                   "value": 0,
                   "label": {
-                    "en": "Off"
+                    "en": "Off",
+                    "no": "Av"
                   }
                 },
                 {
                   "id": "low",
                   "value": 1,
                   "label": {
-                    "en": "Low"
+                    "en": "Low",
+                    "no": "Lav"
                   }
                 },
                 {
                   "id": "normal",
                   "value": 2,
                   "label": {
-                    "en": "Normal"
+                    "en": "Normal",
+                    "no": "Normal"
                   }
                 },
                 {
                   "id": "high",
                   "value": 3,
                   "label": {
-                    "en": "High"
+                    "en": "High",
+                    "no": "Høy"
                   }
                 },
                 {
                   "id": "full",
                   "value": 4,
                   "label": {
-                    "en": "Full"
+                    "en": "Full",
+                    "no": "Full"
                   }
                 },
                 {
                   "id": "user",
                   "value": 5,
                   "label": {
-                    "en": "User"
+                    "en": "User",
+                    "no": "Bruker"
                   }
                 }
               ]
@@ -348,7 +397,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Auto Humidity Control (User Mode)"
+            "en": "Auto Humidity Control (User Mode)",
+            "no": "Automatisk fuktighetskontroll (Bruker-modus)"
           },
           "children": [
             {
@@ -356,13 +406,16 @@
               "type": "number",
               "value": 5,
               "units": {
-                "en": "%"
+                "en": "%",
+                "no": "%"
               },
               "label": {
-                "en": "Boost Limit"
+                "en": "Boost Limit",
+                "no": "Boostgrense"
               },
               "hint": {
-                "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts."
+                "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts.",
+                "no": "Reduser boostgrensen hvis du ønsker en raskere respons. Boostgrensen definerer hvor mye fuktighetsverdien må stige over gjennomsnittet, før det ikke-stegede boostet starter."
               }
             },
             {
@@ -370,13 +423,16 @@
               "type": "number",
               "value": 30,
               "units": {
-                "en": "%"
+                "en": "%",
+                "no": "%"
               },
               "label": {
-                "en": "Full Boost Limit"
+                "en": "Full Boost Limit",
+                "no": "Full Boostgrense"
               },
               "hint": {
-                "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached."
+                "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached.",
+                "no": "Reduser full boostgrense hvis du ønsker mer boost. Full boostgrense definerer hvor mye fuktighetsverdien må stige over gjennomsnittet før full boost er oppnådd."
               }
             }
           ]
@@ -384,7 +440,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Device Info"
+            "en": "Device Info",
+            "no": "Enhetsinfo"
           },
           "children": [
             {
@@ -392,7 +449,8 @@
               "type": "label",
               "value": "",
               "label": {
-                "en": "Serial Number"
+                "en": "Serial Number",
+                "no": "Serienummer"
               }
             }
           ]
@@ -400,7 +458,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Connection Info"
+            "en": "Connection Info",
+            "no": "Koblinginfo"
           },
           "children": [
             {
@@ -408,7 +467,8 @@
               "type": "label",
               "value": "",
               "label": {
-                "en": "Device ID"
+                "en": "Device ID",
+                "no": "Enhets-ID"
               }
             },
             {
@@ -416,7 +476,8 @@
               "type": "label",
               "value": "",
               "label": {
-                "en": "Name"
+                "en": "Name",
+                "no": "Navn"
               }
             },
             {
@@ -424,7 +485,8 @@
               "type": "label",
               "value": "",
               "label": {
-                "en": "Serial Number"
+                "en": "Serial Number",
+                "no": "Serienummer"
               }
             }
           ]
@@ -432,7 +494,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Debug"
+            "en": "Debug",
+            "no": "Feilsøking"
           },
           "children": [
             {
@@ -440,10 +503,12 @@
               "type": "checkbox",
               "value": false,
               "label": {
-                "en": "Debug Mode"
+                "en": "Debug Mode",
+                "no": "Feilsøking"
               },
               "hint": {
-                "en": "You probably don't need to enable this unless you are a developer."
+                "en": "You probably don't need to enable this unless you are a developer.",
+                "no": "Du trenger kanskje ikke aktivere dette dersom du ikke er en utvikler."
               }
             }
           ]
@@ -456,7 +521,8 @@
       "type": "enum",
       "uiComponent": "picker",
       "title": {
-        "en": "Auto Humidity Control Mode"
+        "en": "Auto Humidity Control Mode",
+        "no": "Automatisk luftfuktighet modus"
       },
       "desc": {
         "en": "The current auto humidity control mode"
@@ -467,42 +533,48 @@
           "id": "off",
           "value": 0,
           "title": {
-            "en": "Off"
+            "en": "Off",
+            "no": "Av"
           }
         },
         {
           "id": "user",
           "value": 1,
           "title": {
-            "en": "User"
+            "en": "User",
+            "no": "Bruker"
           }
         },
         {
           "id": "low",
           "value": 2,
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "no": "Lav"
           }
         },
         {
           "id": "normal",
           "value": 3,
           "title": {
-            "en": "Normal"
+            "en": "Normal",
+            "no": "Normal"
           }
         },
         {
           "id": "high",
           "value": 4,
           "title": {
-            "en": "High"
+            "en": "High",
+            "no": "Høy"
           }
         },
         {
           "id": "full",
           "value": 5,
           "title": {
-            "en": "Full"
+            "en": "Full",
+            "no": "Full"
           }
         }
       ],
@@ -514,7 +586,8 @@
       "type": "enum",
       "uiComponent": "picker",
       "title": {
-        "en": "Climate Control Mode"
+        "en": "Climate Control Mode",
+        "no": "Klima kontroll modus"
       },
       "desc": {
         "en": "The current system mode"
@@ -525,45 +598,52 @@
           "id": "away",
           "value": 1,
           "title": {
-            "en": "Away"
+            "en": "Away",
+            "no": "Borte"
           }
         },
         {
           "id": "home",
           "value": 2,
           "title": {
-            "en": "Home"
+            "en": "Home",
+            "no": "Hjemme"
           }
         },
         {
           "id": "boost",
           "value": 3,
           "title": {
-            "en": "Boost"
+            "en": "Boost",
+            "no": "Boost"
           },
           "desc": {
-            "en": "Boosts the fan speed for 1 hour"
+            "en": "Boosts the fan speed for 1 hour",
+            "no": "Booster viftehastigheten i 1 time"
           }
         },
         {
           "id": "travel",
           "value": 4,
           "title": {
-            "en": "Travel"
+            "en": "Travel",
+            "no": "Reise"
           }
         },
         {
           "id": "off",
           "value": 5,
           "title": {
-            "en": "Off"
+            "en": "Off",
+            "no": "Av"
           }
         },
         {
           "id": "fireplace",
           "value": 6,
           "title": {
-            "en": "Fireplace"
+            "en": "Fireplace",
+            "no": "Peis"
           }
         }
       ],
@@ -575,13 +655,16 @@
       "type": "number",
       "uiComponent": null,
       "title": {
-        "en": "Boost Countdown"
+        "en": "Boost Countdown",
+        "no": "Boost nedtelling"
       },
       "desc": {
-        "en": "Time until Boost turns off"
+        "en": "Time until Boost turns off",
+        "no": "Tid til boost modus slutter"
       },
       "units": {
-        "en": "min"
+        "en": "min",
+        "no": "min"
       },
       "decimals": 0,
       "getable": true,
@@ -592,26 +675,30 @@
       "type": "enum",
       "uiComponent": "sensor",
       "title": {
-        "en": "Fan Mode"
+        "en": "Fan Mode",
+        "no": "Viftemodus"
       },
       "icon": "/assets/fan.svg",
       "values": [
         {
           "id": "1",
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "no": "Lav"
           }
         },
         {
           "id": "2",
           "title": {
-            "en": "Normal"
+            "en": "Normal",
+            "no": "Normal"
           }
         },
         {
           "id": "3",
           "title": {
-            "en": "High"
+            "en": "High",
+            "no": "Høy"
           }
         }
       ],
@@ -624,15 +711,18 @@
       "uiComponent": "sensor",
       "icon": "/assets/humidity_amount.svg",
       "title": {
-        "en": "Humidity"
+        "en": "Humidity",
+        "no": "Luftfuktighet"
       },
       "desc": {
-        "en": "grams per cubic meter"
+        "en": "grams per cubic meter",
+        "no": "gram per kubikkmeter"
       },
       "min": 0,
       "decimals": 2,
       "units": {
-        "en": "g/m³"
+        "en": "g/m³",
+        "no": "g/m³"
       },
       "getable": true,
       "setable": false,
@@ -643,15 +733,18 @@
       "uiComponent": "sensor",
       "icon": "/assets/humidity_percent.svg",
       "title": {
-        "en": "Humidity"
+        "en": "Humidity",
+        "no": "Luftfuktighet"
       },
       "desc": {
-        "en": "Percentage of water in the air"
+        "en": "Percentage of water in the air",
+        "no": "Prosentandel av vann i luften"
       },
       "min": 0,
       "decimals": 2,
       "units": {
-        "en": "%"
+        "en": "%",
+        "no": "%"
       },
       "getable": true,
       "setable": false,
@@ -662,14 +755,17 @@
       "uiComponent": "sensor",
       "icon": "/assets/temperature_intake.svg",
       "title": {
-        "en": "Intake Temperature"
+        "en": "Intake Temperature",
+        "no": "Inntakstemperatur"
       },
       "desc": {
-        "en": "The temperature of the air supplied from outside."
+        "en": "The temperature of the air supplied from outside.",
+        "no": "Temperatur på luften som leveres fra utsiden."
       },
       "decimals": 2,
       "units": {
-        "en": "°C"
+        "en": "°C",
+        "no": "°C"
       },
       "getable": true,
       "setable": false,
@@ -680,14 +776,17 @@
       "uiComponent": "sensor",
       "icon": "/assets/temperature_return.svg",
       "title": {
-        "en": "Return Temperature"
+        "en": "Return Temperature",
+        "no": "Returtemperatur"
       },
       "desc": {
-        "en": "The temperature of the air going back into the system from your rooms."
+        "en": "The temperature of the air going back into the system from your rooms.",
+        "no": "Temperatur på luften som går tilbake til systemet fra rommene dine."
       },
       "decimals": 2,
       "units": {
-        "en": "°C"
+        "en": "°C",
+        "no": "°C"
       },
       "getable": true,
       "setable": false,
@@ -698,14 +797,17 @@
       "uiComponent": "sensor",
       "icon": "/assets/temperature_supply.svg",
       "title": {
-        "en": "Supply Temperature"
+        "en": "Supply Temperature",
+        "no": "Temperatur innedel"
       },
       "desc": {
-        "en": "The temperature of the air going out from the system into your rooms."
+        "en": "The temperature of the air going out from the system into your rooms.",
+        "no": "Temperatur på luften som går ut fra systemet til rommene dine."
       },
       "decimals": 2,
       "units": {
-        "en": "°C"
+        "en": "°C",
+        "no": "°C"
       },
       "getable": true,
       "setable": false,
@@ -716,14 +818,17 @@
       "uiComponent": "sensor",
       "icon": "/assets/fan.svg",
       "title": {
-        "en": "Supply Fan Speed"
+        "en": "Supply Fan Speed",
+        "no": "Viftehastighet innedel"
       },
       "desc": {
-        "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed."
+        "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed.",
+        "no": "Viftehastigheten til innedelen. Er normalt lavere enn viftehastigheten til utsugningsdelen."
       },
       "decimals": 0,
       "units": {
-        "en": "%"
+        "en": "%",
+        "no": "%"
       },
       "getable": true,
       "setable": false,
@@ -734,14 +839,17 @@
       "uiComponent": "sensor",
       "icon": "/assets/fan.svg",
       "title": {
-        "en": "Exhaust Fan Speed"
+        "en": "Exhaust Fan Speed",
+        "no": "Viftehastighet utsugningsdel"
       },
       "desc": {
-        "en": "The speed of the exhaust fan. Is normally higher than the supply fan speed."
+        "en": "The speed of the exhaust fan. Is normally higher than the supply fan speed.",
+        "no": "Viftehastigheten til utsugningsdelen. Er normalt høyere enn viftehastigheten til innedelen."
       },
       "decimals": 0,
       "units": {
-        "en": "%"
+        "en": "%",
+        "no": "%"
       },
       "getable": true,
       "setable": false,
@@ -751,10 +859,12 @@
       "type": "enum",
       "uiComponent": "picker",
       "title": {
-        "en": "Summer Night Cooling Mode"
+        "en": "Summer Night Cooling Mode",
+        "no": "Sommernatt avkjølingsmodus"
       },
       "desc": {
-        "en": "The current summer night cooling mode"
+        "en": "The current summer night cooling mode",
+        "no": "Den nåværende sommernatt avkjølingsmodus"
       },
       "value": "off",
       "values": [
@@ -762,42 +872,48 @@
           "id": "off",
           "value": 0,
           "title": {
-            "en": "Off"
+            "en": "Off",
+            "no": "Av"
           }
         },
         {
           "id": "low",
           "value": 1,
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "no": "Lav"
           }
         },
         {
           "id": "normal",
           "value": 2,
           "title": {
-            "en": "Normal"
+            "en": "Normal",
+            "no": "Normal"
           }
         },
         {
           "id": "high",
           "value": 3,
           "title": {
-            "en": "High"
+            "en": "High",
+            "no": "Høy"
           }
         },
         {
           "id": "full",
           "value": 4,
           "title": {
-            "en": "Full"
+            "en": "Full",
+            "no": "Full"
           }
         },
         {
           "id": "user",
           "value": 5,
           "title": {
-            "en": "User"
+            "en": "User",
+            "no": "Bruker"
           }
         }
       ],

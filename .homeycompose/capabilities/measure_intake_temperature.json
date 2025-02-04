@@ -3,14 +3,17 @@
   "uiComponent": "sensor",
   "icon": "/assets/temperature_intake.svg",
   "title": {
-    "en": "Intake Temperature"
+    "en": "Intake Temperature",
+    "no": "Inntakstemperatur"
   },
   "desc": {
-    "en": "The temperature of the air supplied from outside."
+    "en": "The temperature of the air supplied from outside.",
+    "no": "Temperatur på luften som leveres fra utsiden."
   },
   "decimals": 2,
   "units": {
-    "en": "°C"
+    "en": "°C",
+    "no": "°C"
   },
   "getable": true,
   "setable": false,
