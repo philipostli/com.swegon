@@ -1,0 +1,62 @@
+{
+  "id": "set_climate_mode",
+  "title": {
+    "en": "Set Climate Control Mode"
+  },
+  "titleFormatted": {
+    "en": "Set Climate Control Mode to [[climate_mode]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "climate_mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Climate Control Mode"
+      },
+      "values": [
+        {
+          "id": "away",
+          "label": {
+            "en": "Away"
+          }
+        },
+        {
+          "id": "home",
+          "label": {
+            "en": "Home"
+          }
+        },
+        {
+          "id": "boost",
+          "label": {
+            "en": "Boost"
+          }
+        },
+        {
+          "id": "travel",
+          "label": {
+            "en": "Travel"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "fireplace",
+          "label": {
+            "en": "Fireplace"
+          }
+        }
+      ]
+    }
+  ]
+}

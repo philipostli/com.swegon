@@ -1,0 +1,31 @@
+{
+  "type": "enum",
+  "uiComponent": "sensor",
+  "title": {
+    "en": "Fan Mode"
+  },
+  "icon": "/assets/fan.svg",
+  "values": [
+    {
+      "id": "1",
+      "title": {
+        "en": "Low"
+      }
+    },
+    {
+      "id": "2",
+      "title": {
+        "en": "Normal"
+      }
+    },
+    {
+      "id": "3",
+      "title": {
+        "en": "High"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

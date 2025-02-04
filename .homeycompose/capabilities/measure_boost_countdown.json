@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "uiComponent": null,
+  "title": {
+    "en": "Boost Countdown"
+  },
+  "desc": {
+    "en": "Time until Boost turns off"
+  },
+  "units": {
+    "en": "min"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

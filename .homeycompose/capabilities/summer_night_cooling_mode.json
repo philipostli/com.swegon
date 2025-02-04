@@ -1,0 +1,46 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Summer Night Cooling Mode"
+  },
+  "desc": {
+    "en": "The current summer night cooling mode"
+  },
+  "value": "off",
+  "values": [
+    {
+      "id": "off",
+      "value": 0,
+      "title": { "en": "Off" }
+    },
+    {
+      "id": "low",
+      "value": 1,
+      "title": { "en": "Low" }
+    },
+    {
+      "id": "normal",
+      "value": 2,
+      "title": { "en": "Normal" }
+    },
+    {
+      "id": "high",
+      "value": 3,
+      "title": { "en": "High" }
+    },
+    {
+      "id": "full",
+      "value": 4,
+      "title": { "en": "Full" }
+    },
+    {
+      "id": "user",
+      "value": 5,
+      "title": { "en": "User" }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

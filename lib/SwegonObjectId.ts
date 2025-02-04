@@ -1,0 +1,25 @@
+const enum SwegonObjectId {
+  SupplyTemperature = '17',
+  OutputTemperature = '18',
+  IntakeTemperature = '19',
+  Humidity = '22',
+  HumidityAmount = '23',
+  CurrentFanSpeed = '27',
+  VentilationLevelIn = '28',
+  VentilationLevelOut = '29',
+  BoostCountDown = '31',
+  SetFanSpeed = '111',
+  TravellingModeTemperatureDrop = '121',
+  AutoHumidityControlBoostLimit = '124',
+  AutoHumidityControlFullBoostLimit = '125',
+  TurnOff = '155',
+  AutoHumidityControlMode = '159',
+  SummerNightCoolingBoost = '161',
+  SummerNightCoolingMode = '162',
+  SupplyTemperatureSetpoint = '163',
+  TemperatureControlMode = '164',
+  AwayModeTemperatureDrop = '165',
+  Device = '500',
+}
+
+export default SwegonObjectId;

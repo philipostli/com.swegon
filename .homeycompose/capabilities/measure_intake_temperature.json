@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "icon": "/assets/temperature_intake.svg",
+  "title": {
+    "en": "Intake Temperature"
+  },
+  "desc": {
+    "en": "The temperature of the air supplied from outside."
+  },
+  "decimals": 2,
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

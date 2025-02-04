@@ -1,0 +1,45 @@
+{
+  "name": { "en": "Casa W/R Smart Series" },
+  "images": {
+    "small": "/drivers/swegoncasa/assets/images/small.png",
+    "large": "/drivers/swegoncasa/assets/images/large.png",
+    "xlarge": "/drivers/swegoncasa/assets/images/xlarge.png"
+  },
+  "class": "airtreatment",
+  "platforms": ["local"],
+  "capabilities": [
+    "measure_humidity_percent",
+    "measure_humidity_amount",
+    "measure_return_temperature",
+    "measure_intake_temperature",
+    "measure_supply_temperature",
+    "measure_ventilation_level_in",
+    "measure_ventilation_level_out",
+    "climate_mode",
+    "summer_night_cooling_mode",
+    "auto_humidity_control_mode"
+  ],
+  "connectivity": ["cloud"],
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "logo": "logo.png",
+        "usernameLabel": { "en": "Username" },
+        "usernamePlaceholder": { "en": "Email" },
+        "passwordLabel": { "en": "Password" },
+        "passwordPlaceholder": { "en": "Password" }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "icon": "/assets/fan.svg",
+  "title": {
+    "en": "Supply Fan Speed"
+  },
+  "desc": {
+    "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed."
+  },
+  "decimals": 0,
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

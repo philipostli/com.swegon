@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "icon": "/assets/humidity_amount.svg",
+  "title": {
+    "en": "Humidity"
+  },
+  "desc": {
+    "en": "grams per cubic meter"
+  },
+  "min": 0,
+  "decimals": 2,
+  "units": {
+    "en": "g/m³"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

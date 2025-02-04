@@ -1,0 +1,10 @@
+env.json
+node_modules/
+build/
+.dccache
+
+.DS_Store
+
+
+# Added by Homey CLI
+/.homeybuild/

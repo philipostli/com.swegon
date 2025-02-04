@@ -1,0 +1,209 @@
+[
+  {
+    "type": "group",
+    "label": { "en": "Login Details" },
+    "children": [
+      {
+        "id": "username",
+        "type": "text",
+        "label": { "en": "Username" },
+        "value": "",
+        "hint": { "en": "The swegoncasa.io username." }
+      },
+      {
+        "id": "password",
+        "type": "password",
+        "label": { "en": "Password" },
+        "value": "",
+        "hint": { "en": "The swegoncasa.io password." }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Temperature Control" },
+    "children": [
+      {
+        "id": "temperatureControlMode",
+        "type": "dropdown",
+        "value": "comfort",
+        "label": { "en": "Supply Temperature Control Mode" },
+        "hint": {
+          "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency"
+        },
+        "values": [
+          {
+            "id": "comfort",
+            "value": 2,
+            "label": { "en": "Comfort" }
+          },
+          {
+            "id": "eco",
+            "value": 1,
+            "label": { "en": "Eco" }
+          }
+        ]
+      },
+      {
+        "id": "supplyTemperatureSetpoint",
+        "type": "number",
+        "value": 20,
+        "units": {
+          "en": "°C"
+        },
+        "label": { "en": "Supply Temperature Setpoint" },
+        "hint": {
+          "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption."
+        }
+      },
+      {
+        "id": "travellingModeTemperatureDrop",
+        "type": "number",
+        "value": 1,
+        "units": {
+          "en": "°C"
+        },
+        "label": { "en": "Travelling Mode Temperature Drop" },
+        "hint": {
+          "en": "Temperature setpoint is lowered by the defined amount in travelling mode."
+        }
+      },
+      {
+        "id": "awayModeTemperatureDrop",
+        "type": "number",
+        "value": 2,
+        "units": {
+          "en": "°C"
+        },
+        "label": { "en": "Away Mode Temperature Drop" },
+        "hint": {
+          "en": "Temperature setpoint is lowered by the defined amount in away mode."
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Summer Night Cooling" },
+    "children": [
+      {
+        "id": "summerNightCoolingBoost",
+        "type": "dropdown",
+        "value": "off",
+        "label": { "en": "Cooling Level" },
+        "hint": {
+          "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier."
+        },
+        "values": [
+          {
+            "id": "off",
+            "value": 0,
+            "label": { "en": "Off" }
+          },
+          {
+            "id": "low",
+            "value": 1,
+            "label": { "en": "Low" }
+          },
+          {
+            "id": "normal",
+            "value": 2,
+            "label": { "en": "Normal" }
+          },
+          {
+            "id": "high",
+            "value": 3,
+            "label": { "en": "High" }
+          },
+          {
+            "id": "full",
+            "value": 4,
+            "label": { "en": "Full" }
+          },
+          {
+            "id": "user",
+            "value": 5,
+            "label": { "en": "User" }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Auto Humidity Control (User Mode)" },
+    "children": [
+      {
+        "id": "autoHumidityControlBoostLimit",
+        "type": "number",
+        "value": 5,
+        "units": { "en": "%" },
+        "label": { "en": "Boost Limit" },
+        "hint": {
+          "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts."
+        }
+      },
+      {
+        "id": "autoHumidityControlFullBoostLimit",
+        "type": "number",
+        "value": 30,
+        "units": { "en": "%" },
+        "label": { "en": "Full Boost Limit" },
+        "hint": {
+          "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached."
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Device Info" },
+    "children": [
+      {
+        "id": "serialNumber",
+        "type": "label",
+        "value": "",
+        "label": { "en": "Serial Number" }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Connection Info" },
+    "children": [
+      {
+        "id": "connectionId",
+        "type": "label",
+        "value": "",
+        "label": { "en": "Device ID" }
+      },
+      {
+        "id": "connectionName",
+        "type": "label",
+        "value": "",
+        "label": { "en": "Name" }
+      },
+      {
+        "id": "connectionSerialNumber",
+        "type": "label",
+        "value": "",
+        "label": { "en": "Serial Number" }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "en": "Debug" },
+    "children": [
+      {
+        "id": "debugMode",
+        "type": "checkbox",
+        "value": false,
+        "label": { "en": "Debug Mode" },
+        "hint": {
+          "en": "You probably don't need to enable this unless you are a developer."
+        }
+      }
+    ]
+  }
+]

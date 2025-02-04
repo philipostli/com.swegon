@@ -1,0 +1,46 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Auto Humidity Control Mode"
+  },
+  "desc": {
+    "en": "The current auto humidity control mode"
+  },
+  "value": "off",
+  "values": [
+    {
+      "id": "off",
+      "value": 0,
+      "title": { "en": "Off" }
+    },
+    {
+      "id": "user",
+      "value": 1,
+      "title": { "en": "User" }
+    },
+    {
+      "id": "low",
+      "value": 2,
+      "title": { "en": "Low" }
+    },
+    {
+      "id": "normal",
+      "value": 3,
+      "title": { "en": "Normal" }
+    },
+    {
+      "id": "high",
+      "value": 4,
+      "title": { "en": "High" }
+    },
+    {
+      "id": "full",
+      "value": 5,
+      "title": { "en": "Full" }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

@@ -1,0 +1,48 @@
+{
+  "id": "com.swegon",
+  "version": "0.0.1",
+  "compatibility": ">=12.1.2",
+  "sdk": 3,
+  "brandColor": "#006AB2",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Swegon",
+    "no": "Swegon"
+  },
+  "description": {
+    "en": "Freshen up your home",
+    "no": "Sunt og energieffektivt inneklima for boliger"
+  },
+  "category": [
+    "climate"
+  ],
+  "tags": {
+    "en": [
+      "swegon",
+      "temperature control",
+      "heating",
+      "hvac",
+      "ventilation",
+      "air quality"
+    ]
+  },
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Philip Østli"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Philip Østli"
+      }
+    ]
+  },
+  "homepage": "https://www.swegon.com/casa"
+}

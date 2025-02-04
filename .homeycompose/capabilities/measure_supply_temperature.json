@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "icon": "/assets/temperature_supply.svg",
+  "title": {
+    "en": "Supply Temperature"
+  },
+  "desc": {
+    "en": "The temperature of the air going out from the system into your rooms."
+  },
+  "decimals": 2,
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

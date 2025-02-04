@@ -1,0 +1,61 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Climate Control Mode"
+  },
+  "desc": {
+    "en": "The current system mode"
+  },
+  "value": "home",
+  "values": [
+    {
+      "id": "away",
+      "value": 1,
+      "title": {
+        "en": "Away"
+      }
+    },
+    {
+      "id": "home",
+      "value": 2,
+      "title": {
+        "en": "Home"
+      }
+    },
+    {
+      "id": "boost",
+      "value": 3,
+      "title": {
+        "en": "Boost"
+      },
+      "desc": {
+        "en": "Boosts the fan speed for 1 hour"
+      }
+    },
+    {
+      "id": "travel",
+      "value": 4,
+      "title": {
+        "en": "Travel"
+      }
+    },
+    {
+      "id": "off",
+      "value": 5,
+      "title": {
+        "en": "Off"
+      }
+    },
+    {
+      "id": "fireplace",
+      "value": 6,
+      "title": {
+        "en": "Fireplace"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

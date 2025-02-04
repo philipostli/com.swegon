@@ -1,0 +1,809 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.swegon",
+  "version": "0.0.1",
+  "compatibility": ">=12.1.2",
+  "sdk": 3,
+  "brandColor": "#006AB2",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Swegon",
+    "no": "Swegon"
+  },
+  "description": {
+    "en": "Freshen up your home",
+    "no": "Sunt og energieffektivt inneklima for boliger"
+  },
+  "category": [
+    "climate"
+  ],
+  "tags": {
+    "en": [
+      "swegon",
+      "temperature control",
+      "heating",
+      "hvac",
+      "ventilation",
+      "air quality"
+    ]
+  },
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Philip Østli"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Philip Østli"
+      }
+    ]
+  },
+  "homepage": "https://www.swegon.com/casa",
+  "flow": {
+    "actions": [
+      {
+        "id": "set_climate_mode",
+        "title": {
+          "en": "Set Climate Control Mode"
+        },
+        "titleFormatted": {
+          "en": "Set Climate Control Mode to [[climate_mode]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "climate_mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Climate Control Mode"
+            },
+            "values": [
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away"
+                }
+              },
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost"
+                }
+              },
+              {
+                "id": "travel",
+                "label": {
+                  "en": "Travel"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "fireplace",
+                "label": {
+                  "en": "Fireplace"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Casa W/R Smart Series"
+      },
+      "images": {
+        "small": "/drivers/swegoncasa/assets/images/small.png",
+        "large": "/drivers/swegoncasa/assets/images/large.png",
+        "xlarge": "/drivers/swegoncasa/assets/images/xlarge.png"
+      },
+      "class": "airtreatment",
+      "platforms": [
+        "local"
+      ],
+      "capabilities": [
+        "measure_humidity_percent",
+        "measure_humidity_amount",
+        "measure_return_temperature",
+        "measure_intake_temperature",
+        "measure_supply_temperature",
+        "measure_ventilation_level_in",
+        "measure_ventilation_level_out",
+        "climate_mode",
+        "summer_night_cooling_mode",
+        "auto_humidity_control_mode"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "logo.png",
+            "usernameLabel": {
+              "en": "Username"
+            },
+            "usernamePlaceholder": {
+              "en": "Email"
+            },
+            "passwordLabel": {
+              "en": "Password"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "swegoncasa",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Login Details"
+          },
+          "children": [
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username"
+              },
+              "value": "",
+              "hint": {
+                "en": "The swegoncasa.io username."
+              }
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password"
+              },
+              "value": "",
+              "hint": {
+                "en": "The swegoncasa.io password."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature Control"
+          },
+          "children": [
+            {
+              "id": "temperatureControlMode",
+              "type": "dropdown",
+              "value": "comfort",
+              "label": {
+                "en": "Supply Temperature Control Mode"
+              },
+              "hint": {
+                "en": "ECO Mode control supply temperature to achieve best heating/cooling efficiency"
+              },
+              "values": [
+                {
+                  "id": "comfort",
+                  "value": 2,
+                  "label": {
+                    "en": "Comfort"
+                  }
+                },
+                {
+                  "id": "eco",
+                  "value": 1,
+                  "label": {
+                    "en": "Eco"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "supplyTemperatureSetpoint",
+              "type": "number",
+              "value": 20,
+              "units": {
+                "en": "°C"
+              },
+              "label": {
+                "en": "Supply Temperature Setpoint"
+              },
+              "hint": {
+                "en": "Note increasing supply temperature setpoint will cause impaired fresh air mixing and may increase electical consumption."
+              }
+            },
+            {
+              "id": "travellingModeTemperatureDrop",
+              "type": "number",
+              "value": 1,
+              "units": {
+                "en": "°C"
+              },
+              "label": {
+                "en": "Travelling Mode Temperature Drop"
+              },
+              "hint": {
+                "en": "Temperature setpoint is lowered by the defined amount in travelling mode."
+              }
+            },
+            {
+              "id": "awayModeTemperatureDrop",
+              "type": "number",
+              "value": 2,
+              "units": {
+                "en": "°C"
+              },
+              "label": {
+                "en": "Away Mode Temperature Drop"
+              },
+              "hint": {
+                "en": "Temperature setpoint is lowered by the defined amount in away mode."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Summer Night Cooling"
+          },
+          "children": [
+            {
+              "id": "summerNightCoolingBoost",
+              "type": "dropdown",
+              "value": "off",
+              "label": {
+                "en": "Cooling Level"
+              },
+              "hint": {
+                "en": "Higher selection allows colder supply air temperature and cooling need is detected earlier."
+              },
+              "values": [
+                {
+                  "id": "off",
+                  "value": 0,
+                  "label": {
+                    "en": "Off"
+                  }
+                },
+                {
+                  "id": "low",
+                  "value": 1,
+                  "label": {
+                    "en": "Low"
+                  }
+                },
+                {
+                  "id": "normal",
+                  "value": 2,
+                  "label": {
+                    "en": "Normal"
+                  }
+                },
+                {
+                  "id": "high",
+                  "value": 3,
+                  "label": {
+                    "en": "High"
+                  }
+                },
+                {
+                  "id": "full",
+                  "value": 4,
+                  "label": {
+                    "en": "Full"
+                  }
+                },
+                {
+                  "id": "user",
+                  "value": 5,
+                  "label": {
+                    "en": "User"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Auto Humidity Control (User Mode)"
+          },
+          "children": [
+            {
+              "id": "autoHumidityControlBoostLimit",
+              "type": "number",
+              "value": 5,
+              "units": {
+                "en": "%"
+              },
+              "label": {
+                "en": "Boost Limit"
+              },
+              "hint": {
+                "en": "Decrease boost limit if faster response is wanted. Boost limit defines how much humidity value must rise over average, before stepless boosting starts."
+              }
+            },
+            {
+              "id": "autoHumidityControlFullBoostLimit",
+              "type": "number",
+              "value": 30,
+              "units": {
+                "en": "%"
+              },
+              "label": {
+                "en": "Full Boost Limit"
+              },
+              "hint": {
+                "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Info"
+          },
+          "children": [
+            {
+              "id": "serialNumber",
+              "type": "label",
+              "value": "",
+              "label": {
+                "en": "Serial Number"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection Info"
+          },
+          "children": [
+            {
+              "id": "connectionId",
+              "type": "label",
+              "value": "",
+              "label": {
+                "en": "Device ID"
+              }
+            },
+            {
+              "id": "connectionName",
+              "type": "label",
+              "value": "",
+              "label": {
+                "en": "Name"
+              }
+            },
+            {
+              "id": "connectionSerialNumber",
+              "type": "label",
+              "value": "",
+              "label": {
+                "en": "Serial Number"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Debug"
+          },
+          "children": [
+            {
+              "id": "debugMode",
+              "type": "checkbox",
+              "value": false,
+              "label": {
+                "en": "Debug Mode"
+              },
+              "hint": {
+                "en": "You probably don't need to enable this unless you are a developer."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "auto_humidity_control_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Auto Humidity Control Mode"
+      },
+      "desc": {
+        "en": "The current auto humidity control mode"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "value": 0,
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "user",
+          "value": 1,
+          "title": {
+            "en": "User"
+          }
+        },
+        {
+          "id": "low",
+          "value": 2,
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "normal",
+          "value": 3,
+          "title": {
+            "en": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "value": 4,
+          "title": {
+            "en": "High"
+          }
+        },
+        {
+          "id": "full",
+          "value": 5,
+          "title": {
+            "en": "Full"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "climate_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Climate Control Mode"
+      },
+      "desc": {
+        "en": "The current system mode"
+      },
+      "value": "home",
+      "values": [
+        {
+          "id": "away",
+          "value": 1,
+          "title": {
+            "en": "Away"
+          }
+        },
+        {
+          "id": "home",
+          "value": 2,
+          "title": {
+            "en": "Home"
+          }
+        },
+        {
+          "id": "boost",
+          "value": 3,
+          "title": {
+            "en": "Boost"
+          },
+          "desc": {
+            "en": "Boosts the fan speed for 1 hour"
+          }
+        },
+        {
+          "id": "travel",
+          "value": 4,
+          "title": {
+            "en": "Travel"
+          }
+        },
+        {
+          "id": "off",
+          "value": 5,
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "fireplace",
+          "value": 6,
+          "title": {
+            "en": "Fireplace"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "measure_boost_countdown": {
+      "type": "number",
+      "uiComponent": null,
+      "title": {
+        "en": "Boost Countdown"
+      },
+      "desc": {
+        "en": "Time until Boost turns off"
+      },
+      "units": {
+        "en": "min"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_fan_speed": {
+      "type": "enum",
+      "uiComponent": "sensor",
+      "title": {
+        "en": "Fan Mode"
+      },
+      "icon": "/assets/fan.svg",
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "Normal"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "High"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_humidity_amount": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/humidity_amount.svg",
+      "title": {
+        "en": "Humidity"
+      },
+      "desc": {
+        "en": "grams per cubic meter"
+      },
+      "min": 0,
+      "decimals": 2,
+      "units": {
+        "en": "g/m³"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_humidity_percent": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/humidity_percent.svg",
+      "title": {
+        "en": "Humidity"
+      },
+      "desc": {
+        "en": "Percentage of water in the air"
+      },
+      "min": 0,
+      "decimals": 2,
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_intake_temperature": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/temperature_intake.svg",
+      "title": {
+        "en": "Intake Temperature"
+      },
+      "desc": {
+        "en": "The temperature of the air supplied from outside."
+      },
+      "decimals": 2,
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_return_temperature": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/temperature_return.svg",
+      "title": {
+        "en": "Return Temperature"
+      },
+      "desc": {
+        "en": "The temperature of the air going back into the system from your rooms."
+      },
+      "decimals": 2,
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_supply_temperature": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/temperature_supply.svg",
+      "title": {
+        "en": "Supply Temperature"
+      },
+      "desc": {
+        "en": "The temperature of the air going out from the system into your rooms."
+      },
+      "decimals": 2,
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_ventilation_level_in": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/fan.svg",
+      "title": {
+        "en": "Supply Fan Speed"
+      },
+      "desc": {
+        "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed."
+      },
+      "decimals": 0,
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "measure_ventilation_level_out": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/fan.svg",
+      "title": {
+        "en": "Exhaust Fan Speed"
+      },
+      "desc": {
+        "en": "The speed of the exhaust fan. Is normally higher than the supply fan speed."
+      },
+      "decimals": 0,
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "summer_night_cooling_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Summer Night Cooling Mode"
+      },
+      "desc": {
+        "en": "The current summer night cooling mode"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "value": 0,
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "low",
+          "value": 1,
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "normal",
+          "value": 2,
+          "title": {
+            "en": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "value": 3,
+          "title": {
+            "en": "High"
+          }
+        },
+        {
+          "id": "full",
+          "value": 4,
+          "title": {
+            "en": "Full"
+          }
+        },
+        {
+          "id": "user",
+          "value": 5,
+          "title": {
+            "en": "User"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "insights": false
+    }
+  }
+}
