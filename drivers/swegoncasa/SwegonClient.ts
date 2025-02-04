@@ -30,6 +30,7 @@ class SwegonClient {
   private eventHandler: EventEmitter;
   private logger: Logger;
   private timestamp: Date = new Date();
+  private hasInitialized: boolean = false;
   private pingInterval: NodeJS.Timeout | null = null;
 
   constructor(username: string, password: string, logger: Logger) {
@@ -248,6 +249,8 @@ class SwegonClient {
           clearInterval(this.pingInterval);
           this.pingInterval = null;
         }
+        this.hasInitialized = false;  // Reset ved disconnect
+        
         this.logger.error('WebSocket Closed:', {
           code,
           reason: reason.toString(),
@@ -311,20 +314,24 @@ class SwegonClient {
                 } as ConnectionInfo);
 
                 // Set up subscription og read
-                const subscription = [
-                  "message",
-                  JSON.stringify(SwegonConstants.SubscriptionArgs)
-                ];
+                if (!this.hasInitialized) {
+                  const subscription = [
+                    "message",
+                    JSON.stringify(SwegonConstants.SubscriptionArgs)
+                  ];
 
-                const read = [
-                  "message",
-                  JSON.stringify(SwegonConstants.ReadArgs)
-                ];
+                  const read = [
+                    "message",
+                    JSON.stringify(SwegonConstants.ReadArgs)
+                  ];
 
-                ws.send(`42${JSON.stringify(read)}`);
-                this.logger.debug("Sent read");
-                ws.send(`42${JSON.stringify(subscription)}`);
-                this.logger.debug("Sent subscription");
+                  ws.send(`42${JSON.stringify(read)}`);
+                  this.logger.debug("Sent read");
+                  ws.send(`42${JSON.stringify(subscription)}`);
+                  this.logger.debug("Sent subscription");
+                  
+                  this.hasInitialized = true;
+                }
 
               } else if (
                   message?.result &&
