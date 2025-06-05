@@ -52,5 +52,8 @@
       }
     ]
   },
-  "homepage": "https://www.swegon.com/casa"
+  "homepage": "https://www.swegon.com/casa",
+  "support": "https://github.com/philipostli/com.swegon/issues",
+  "source": "https://github.com/philipostli/com.swegon",
+  "homeyCommunityTopicId": 137674
 }
