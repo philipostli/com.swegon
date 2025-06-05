@@ -1,6 +1,6 @@
 {
   "id": "com.swegon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "compatibility": ">=12.1.2",
   "sdk": 3,
   "brandColor": "#006AB2",

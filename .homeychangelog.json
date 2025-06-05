@@ -2,5 +2,8 @@
   "0.0.1": {
     "en": "Initial Release",
     "no": "Initial Release"
+  },
+  "0.0.2": {
+    "en": "Fixed communication with server"
   }
 }
