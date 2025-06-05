@@ -68,14 +68,14 @@ class SwegonClient {
 
   public async setValue(id: SwegonObjectId, value: number): Promise<void> {
     if (this.ws) {
-      const writeArgs = {
-        name: 'message',
-        args: [JSON.stringify(SwegonConstants.WriteArgs(id, value))],
-      };
+      const writeMessage = [
+        "message",
+        JSON.stringify(SwegonConstants.WriteArgs(id, value))
+      ];
 
-      this.logger.debug('Sending message to Swegon', writeArgs);
+      this.logger.debug('Sending message to Swegon', writeMessage);
 
-      this.ws.send(`42${JSON.stringify(writeArgs)}`);
+      this.ws.send(`42${JSON.stringify(writeMessage)}`);
     }
   }
 
@@ -83,30 +83,34 @@ class SwegonClient {
     currentValue: SwegonClimateMode,
     newValue: SwegonClimateMode,
   ): Promise<void> {
+    this.logger.debug('Setting climate mode', { currentValue, newValue });
     if (this.ws && newValue !== currentValue) {
       // Reset Travel mode if currently in Travel mode
       if (currentValue === SwegonClimateMode.Travel) {
-        const travelArgs = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('112', 0))],
-        };
+        const travelMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('112', 0))
+        ];
 
-        this.ws.send(`42${JSON.stringify(travelArgs)}`);
+        this.logger.debug('Sending message to Swegon', travelMessage);
+        this.ws.send(`42${JSON.stringify(travelMessage)}`);
       }
 
       // Reset Fireplace mode if currently in Fireplace mode
       if (currentValue === SwegonClimateMode.Fireplace) {
-        const fireplaceArgs = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('153', 0))],
-        };
-        const fireplaceArgs2 = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('154', 0))],
-        };
+        const fireplaceMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('153', 0))
+        ];
+        const fireplaceMessage2 = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('154', 0))
+        ];
 
-        this.ws.send(`42${JSON.stringify(fireplaceArgs)}`);
-        this.ws.send(`42${JSON.stringify(fireplaceArgs2)}`);
+        this.logger.debug('Sending message to Swegon', fireplaceMessage);
+        this.ws.send(`42${JSON.stringify(fireplaceMessage)}`);
+        this.logger.debug('Sending message to Swegon', fireplaceMessage2);
+        this.ws.send(`42${JSON.stringify(fireplaceMessage2)}`);
       }
 
       // Set fan speed value
@@ -115,90 +119,85 @@ class SwegonClient {
         newValue === SwegonClimateMode.Home ||
         newValue === SwegonClimateMode.Boost
       ) {
-        const fanSpeedArgs = {
-          name: 'message',
-          args: [
-            JSON.stringify(
-              SwegonConstants.WriteArgs(SwegonObjectId.SetFanSpeed, newValue),
-            ),
-          ],
-        };
+        const fanSpeedMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs(SwegonObjectId.SetFanSpeed, newValue))
+        ];
 
         this.logger.info(`Setting Fan Speed to ${newValue}`);
-        this.logger.debug('Sending message to Swegon', fanSpeedArgs);
+        this.logger.debug('Sending message to Swegon', fanSpeedMessage);
 
-        this.ws.send(`42${JSON.stringify(fanSpeedArgs)}`);
+        this.ws.send(`42${JSON.stringify(fanSpeedMessage)}`);
       }
 
       // Turn on
       if (currentValue === SwegonClimateMode.Off) {
-        const onArgs = {
-          name: 'message',
-          args: [
-            JSON.stringify(
-              SwegonConstants.WriteArgs(SwegonObjectId.TurnOff, 0),
-            ),
-          ],
-        };
+        const onMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs(SwegonObjectId.TurnOff, 0))
+        ];
 
         // TODO: Not sure what this does yet
-        const onArgs2 = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('156', 1))],
-        };
+        const onMessage2 = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('156', 1))
+        ];
 
-        this.ws.send(`42${JSON.stringify(onArgs)}`);
-        this.ws.send(`42${JSON.stringify(onArgs2)}`);
+        this.logger.debug('Sending message to Swegon', onMessage);
+        this.ws.send(`42${JSON.stringify(onMessage)}`);
+        this.logger.debug('Sending message to Swegon', onMessage2);
+        this.ws.send(`42${JSON.stringify(onMessage2)}`);
       }
 
       // Turn off
       if (newValue === SwegonClimateMode.Off) {
-        const offArgs = {
-          name: 'message',
-          args: [
-            JSON.stringify(
-              SwegonConstants.WriteArgs(SwegonObjectId.TurnOff, 1),
-            ),
-          ],
-        };
+        const offMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs(SwegonObjectId.TurnOff, 1))
+        ];
 
-        this.ws.send(`42${JSON.stringify(offArgs)}`);
+        this.logger.debug('Turning off', offMessage);
+        this.ws.send(`42${JSON.stringify(offMessage)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
       if (newValue === SwegonClimateMode.Boost) {
-        const boostArgs = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('116', 1))],
-        };
+        const boostMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('116', 1))
+        ];
 
-        this.ws.send(`42${JSON.stringify(boostArgs)}`);
+        this.logger.debug('Turning on boost', boostMessage);
+        this.ws.send(`42${JSON.stringify(boostMessage)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
       if (newValue === SwegonClimateMode.Fireplace) {
-        const fireplaceArgs = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('153', 1))],
-        };
+        const fireplaceMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('153', 1))
+        ];
 
-        this.ws.send(`42${JSON.stringify(fireplaceArgs)}`);
+        this.logger.debug('Turning on fireplace', fireplaceMessage);
+        this.ws.send(`42${JSON.stringify(fireplaceMessage)}`);
       }
 
       // TODO: Not sure what this does yet, but swegoncasa.io does it so we do as well
       if (newValue === SwegonClimateMode.Travel) {
-        const travelArgs = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('112', 1))],
-        };
+        const travelMessage = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('112', 1))
+        ];
 
-        const travelArgs2 = {
-          name: 'message',
-          args: [JSON.stringify(SwegonConstants.WriteArgs('154', 1))],
-        };
+        const travelMessage2 = [
+          "message",
+          JSON.stringify(SwegonConstants.WriteArgs('154', 1))
+        ];
 
-        this.ws.send(`42${JSON.stringify(travelArgs)}`);
-        this.ws.send(`42${JSON.stringify(travelArgs2)}`);
+        this.logger.debug('Turning on travel', travelMessage);
+        this.ws.send(`42${JSON.stringify(travelMessage)}`);
+        this.logger.debug('Turning on travel', travelMessage2);
+        this.ws.send(`42${JSON.stringify(travelMessage2)}`);
       }
     }
   }
@@ -267,7 +266,7 @@ class SwegonClient {
         'message',
         (data: Buffer | ArrayBuffer | Buffer[], isBinary: boolean) => {
           let value = data.toString();
-          // this.logger.debug('Received message from Swegon: ', value);
+          this.logger.debug('Received message from Swegon: ', value);
 
           // Håndter Socket.IO v4 handshake
           if (value.startsWith('0')) {
