@@ -2,7 +2,7 @@
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.swegon",
   "version": "0.0.2",
-  "compatibility": ">=12.1.2",
+  "compatibility": ">=12.3.0",
   "sdk": 3,
   "brandColor": "#006AB2",
   "platforms": [
@@ -522,6 +522,33 @@
       ]
     }
   ],
+  "widgets": {
+    "control-panel": {
+      "name": {
+        "en": "Swegon Casa"
+      },
+      "height": 155,
+      "settings": [],
+      "devices": {
+        "type": "app",
+        "singular": true,
+        "filter": {
+          "capabilities": "auto_humidity_control_mode"
+        }
+      },
+      "api": {
+        "getUnitState": {
+          "method": "GET",
+          "path": "/"
+        },
+        "setClimateMode": {
+          "method": "PUT",
+          "path": "/climate"
+        }
+      },
+      "id": "control-panel"
+    }
+  },
   "capabilities": {
     "auto_humidity_control_mode": {
       "type": "enum",

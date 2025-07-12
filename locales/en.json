@@ -1,1 +1,11 @@
-{}
+{
+  "climate_mode": {
+    "home": "Home",
+    "away": "Away",
+    "boost": "Boost",
+    "travel": "Travel",
+    "fireplace": "Fireplace",
+    "fan_off": "Fan Off"
+  },
+  "mode": "Mode"
+}

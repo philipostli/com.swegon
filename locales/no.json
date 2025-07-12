@@ -1,0 +1,11 @@
+{
+  "climate_mode": {
+    "home": "Hjemme",
+    "away": "Borte",
+    "boost": "Boost",
+    "travel": "Reise",
+    "fireplace": "Fyr",
+    "fan_off": "Vifte av"
+  },
+  "mode": "Modus"
+}

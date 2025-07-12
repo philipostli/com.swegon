@@ -1,0 +1,24 @@
+{
+  "name": {
+    "en": "Swegon Casa"
+  },
+  "height": 155,
+  "settings": [],
+  "devices": {
+    "type": "app",
+    "singular": true,
+    "filter": {
+      "capabilities": "auto_humidity_control_mode"
+    }
+  },
+  "api": {
+    "getUnitState": {
+      "method": "GET",
+      "path": "/"
+    },
+    "setClimateMode": {
+      "method": "PUT",
+      "path": "/climate"
+    }
+  }
+}

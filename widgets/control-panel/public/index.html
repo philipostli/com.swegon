@@ -1,0 +1,179 @@
+<html>
+  <head>
+    <link href="./style.css" rel="stylesheet">
+  </head>
+
+  <body class="homey-widget-full">
+    <h2 class="device-name homey-text-bold" id="deviceName">[name]</h2>
+    <div class="main-container background">
+        <div class="info-panel">
+          <div class="status-container">
+            <div class="status-info">
+              <div class="status-row">
+                <span class="status-value" data-i18n="mode"></span>
+                <span class="status-value" id="currentJobState">[State]</span>
+              </div>
+              <div class="status-row">
+                <span class="material-icons">water_drop</span>
+                <span class="homey-text-medium homey-color-text" id="humidityPercent">-</span>%
+                <span class="material-icons">mode_fan</span>
+                <span class="homey-text-medium homey-color-text" id="fanSpeed">-</span>
+              </div>
+              <div class="status-row">  
+                <span class="material-icons">login</span>
+                <span class="homey-text-medium homey-color-text" id="intakeTemperature">-</span>
+                <span class="material-icons logout">logout</span>
+                <span class="homey-text-medium homey-color-text" id="returnTemperature">-</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="buttons-container">
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">location_away</span>
+        </button>
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">home</span>
+        </button>
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">air</span>
+        </button>
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">work</span>
+        </button>
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">mode_fan_off</span>
+        </button>
+        <button class="icon-button" id="climateModeIcon">
+          <span class="material-icons">fireplace</span>
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function onHomeyReady(Homey) {
+        Homey.ready({ height: 155 });
+
+        const $deviceName = document.getElementById('deviceName');
+        const $currentJobState = document.getElementById('currentJobState');
+        const $selectedDeviceId = Homey.getDeviceIds()[0];
+        const $climateModeIcon = document.getElementById('climateModeIcon');
+        const $fanSpeed = document.getElementById('fanSpeed');
+        const $humidityPercent = document.getElementById('humidityPercent');
+        const $intakeTemperature = document.getElementById('intakeTemperature');
+        const $returnTemperature = document.getElementById('returnTemperature');
+
+        // Add click event listeners to all climate mode buttons
+        document.querySelectorAll('.icon-button').forEach((button, index) => {
+          button.addEventListener('click', () => {
+            let climateMode;
+            switch(index) {
+              case 0:
+                climateMode = 'away';
+                break;
+              case 1:
+                climateMode = 'home';
+                break;
+              case 2:
+                climateMode = 'boost';
+                break;
+              case 3:
+                climateMode = 'travel';
+                break;
+              case 4:
+                climateMode = 'off';
+                break;
+              case 5:
+                climateMode = 'fireplace';
+                break;
+            }
+            
+            Homey.api('PUT', `/climate?deviceId=${$selectedDeviceId}`, {
+              climateMode: climateMode
+            })
+            .then(() => {
+              console.log('Climate mode updated successfully');
+            })
+            .catch(error => {
+              console.error('Error setting climate mode:', error);
+            });
+          });
+        });
+
+        // Function to get readable status text
+        function getStatusText(value) {
+          return Homey.__(`climate_mode.${value}`) || value || 'Unknown';
+        }
+
+        // Function to update selected button
+        function updateSelectedButton(state) {
+          // Remove selected class from all buttons
+          document.querySelectorAll('.icon-button').forEach(button => {
+            button.classList.remove('selected');
+          });
+
+          // Add selected class to the appropriate button based on state
+          const buttons = document.querySelectorAll('.icon-button');
+          switch(state) {
+            case 'away':
+              buttons[0].classList.add('selected'); // location_away icon
+              break;
+            case 'home':
+              buttons[1].classList.add('selected'); // home icon
+              break;
+            case 'boost':
+              buttons[2].classList.add('selected'); // air icon
+              break;
+            case 'travel':
+              buttons[3].classList.add('selected'); // work icon
+              break;
+            case 'off':
+              buttons[4].classList.add('selected'); // mode_fan_off icon
+              break;
+            case 'fireplace':
+              buttons[5].classList.add('selected'); // fireplace icon
+              break;
+          }
+        }
+
+        function updateInfo() {
+          Homey.api('GET', `/?deviceId=${$selectedDeviceId}`)
+            .then((unitInfo) => {
+
+              //test
+              // unitInfo.progress = 13;
+              // unitInfo.remainingTime = '01:14';
+              // unitInfo.state = 'away'; 
+              // unitInfo.name = 'Kjøkkenvifte';
+              //
+
+              // console.log(unitInfo);
+
+              // Update device name
+              $deviceName.textContent = unitInfo.name || 'Swegon Casa';
+              
+              // Update job state
+              $currentJobState.textContent = getStatusText(unitInfo.state);
+
+              $fanSpeed.textContent = unitInfo.fanSpeed + '%' || '-';
+              $humidityPercent.textContent = unitInfo.humidityPercent || '-';
+              $intakeTemperature.textContent = unitInfo.intakeTemperature + '°C' || '-';
+              $returnTemperature.textContent = unitInfo.returnTemperature + '°C' || '-';
+              
+              // Update selected button
+              updateSelectedButton(unitInfo.state);
+              
+            })
+            .catch(error => {
+              console.error('Error fetching data:', error);
+              $currentJobState.textContent = 'Error loading';
+            });
+        }
+
+        // Update immediately and then every 5 seconds
+        updateInfo();
+        setInterval(updateInfo, 5000);
+      }
+    </script>
+  </body>
+</html>
