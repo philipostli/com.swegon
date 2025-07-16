@@ -44,7 +44,7 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Philip Østli"
+    "name": "Ove Andersen"
   },
   "contributors": {
     "developers": [
@@ -522,33 +522,6 @@
       ]
     }
   ],
-  "widgets": {
-    "control-panel": {
-      "name": {
-        "en": "Swegon Casa"
-      },
-      "height": 155,
-      "settings": [],
-      "devices": {
-        "type": "app",
-        "singular": true,
-        "filter": {
-          "capabilities": "auto_humidity_control_mode"
-        }
-      },
-      "api": {
-        "getUnitState": {
-          "method": "GET",
-          "path": "/"
-        },
-        "setClimateMode": {
-          "method": "PUT",
-          "path": "/climate"
-        }
-      },
-      "id": "control-panel"
-    }
-  },
   "capabilities": {
     "auto_humidity_control_mode": {
       "type": "enum",
