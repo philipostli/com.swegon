@@ -1,6 +1,7 @@
 import Logger from '../../lib/logger';
 import MeasurementType from '../../lib/MeasurementType';
 import { Measurement } from '../../types';
+import ModeType from '../../lib/ModeType';
 
 class MeasurementHandler {
   private logger: Logger;
@@ -12,6 +13,9 @@ class MeasurementHandler {
   public async HandleMeasurement(
     setCapabilityValue: (capabilityId: string, value: any) => Promise<void>,
     data: Measurement,
+    hasCapability: (capabilityId: string) => boolean,
+    addCapability: (capabilityId: string) => Promise<void>,
+    removeCapability: (capabilityId: string) => Promise<void>,
   ): Promise<void> {
     switch (data.type) {
       case MeasurementType.SupplyTemperature:
@@ -49,6 +53,21 @@ class MeasurementHandler {
       case MeasurementType.BoostCountDown:
         this.logger.info(`BoostCountDown: ${data.value}`);
         await setCapabilityValue('measure_boost_countdown', data.value);
+        break;
+      case MeasurementType.AirQuality:
+        this.logger.info(`AirQuality: ${data.value}`);
+        if (data.value > 0) {
+          if (!hasCapability('measure_air_quality'))
+            await addCapability('measure_air_quality');
+          if (!hasCapability(ModeType.AutoAirQualityControlMode))
+            await addCapability(ModeType.AutoAirQualityControlMode);
+          await setCapabilityValue('measure_air_quality', data.value);
+        } else if (data.value === 0) {
+          if (hasCapability('measure_air_quality'))
+            await removeCapability('measure_air_quality');
+          if (hasCapability(ModeType.AutoAirQualityControlMode))
+            await removeCapability(ModeType.AutoAirQualityControlMode);
+        }
         break;
       default:
         break;

@@ -11,6 +11,7 @@ import ModeHandler from './ModeHandler';
 import ModeType from '../../lib/ModeType';
 import SwegonObjectId from '../../lib/SwegonObjectId';
 import AutoHumidityControlModes from '../../lib/AutoHumidityControlModes';
+import AutoAirQualityControlModes from '../../lib/AutoAirQualityControlModes';
 
 class SwegonCasaDevice extends Homey.Device {
   private logger = new Logger(this.log, this.error, true);
@@ -38,8 +39,8 @@ class SwegonCasaDevice extends Homey.Device {
 
   /** Add capabilities if they do not already exist */
   private async ensureCapabilities(): Promise<void> {
-    if (!this.hasCapability('climate_mode')) {
-      await this.addCapability('climate_mode');
+    if (!this.hasCapability(ModeType.ClimateMode)) {
+      await this.addCapability(ModeType.ClimateMode);
     }
 
     if (!this.hasCapability('measure_supply_temperature')) {
@@ -78,12 +79,20 @@ class SwegonCasaDevice extends Homey.Device {
       await this.addCapability('measure_ventilation_level_out');
     }
 
-    if (!this.hasCapability('summer_night_cooling_mode')) {
-      await this.addCapability('summer_night_cooling_mode');
+    if (!this.hasCapability(ModeType.SummerNightCoolingMode)) {
+      await this.addCapability(ModeType.SummerNightCoolingMode);
     }
 
     if (!this.hasCapability(ModeType.AutoHumidityControlMode)) {
       await this.addCapability(ModeType.AutoHumidityControlMode);
+    }
+
+    if (!this.hasCapability(ModeType.AutoAirQualityControlMode)) {
+      await this.addCapability(ModeType.AutoAirQualityControlMode);
+    }
+
+    if (!this.hasCapability('measure_air_quality')) {
+      await this.addCapability('measure_air_quality');
     }
   }
 
@@ -92,6 +101,9 @@ class SwegonCasaDevice extends Homey.Device {
       await this.measurementHandler.HandleMeasurement(
         this.setCapabilityValue.bind(this),
         data,
+        this.hasCapability.bind(this),
+        this.addCapability.bind(this),
+        this.removeCapability.bind(this),
       );
     } catch (err) {
       this.logger.error(err);
@@ -241,6 +253,24 @@ class SwegonCasaDevice extends Homey.Device {
         if (mode) {
           swegonClient.setValue(
             SwegonObjectId.AutoHumidityControlMode,
+            mode.value,
+          );
+        }
+      },
+    );
+
+    this.registerCapabilityListener(
+      ModeType.AutoAirQualityControlMode,
+      async (value: string) => {
+        this.logger.info(
+          `${ModeType.AutoAirQualityControlMode} Changed: ${value}`,
+        );
+
+        const mode = AutoAirQualityControlModes.find((x) => x.id === value);
+
+        if (mode) {
+          swegonClient.setValue(
+            SwegonObjectId.AutoAirQualityControlMode,
             mode.value,
           );
         }

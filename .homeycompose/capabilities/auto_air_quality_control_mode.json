@@ -1,0 +1,65 @@
+{
+  "type": "enum",
+  "uiComponent": "picker",
+  "title": {
+    "en": "Auto Air Quality Control Mode",
+    "no": "Automatisk luftkvalitet modus"
+  },
+  "desc": {
+    "en": "The current auto air quality control mode"
+  },
+  "value": "off",
+  "values": [
+    {
+      "id": "off",
+      "value": 0,
+      "title": {
+        "en": "Off",
+        "no": "Av"
+      }
+    },
+    {
+      "id": "user",
+      "value": 1,
+      "title": {
+        "en": "User",
+        "no": "Bruker"
+      }
+    },
+    {
+      "id": "low",
+      "value": 2,
+      "title": {
+        "en": "Low",
+        "no": "Lav"
+      }
+    },
+    {
+      "id": "normal",
+      "value": 3,
+      "title": {
+        "en": "Normal",
+        "no": "Normal"
+      }
+    },
+    {
+      "id": "high",
+      "value": 4,
+      "title": {
+        "en": "High",
+        "no": "Høy"
+      }
+    },
+    {
+      "id": "full",
+      "value": 5,
+      "title": {
+        "en": "Full",
+        "no": "Full"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

@@ -88,7 +88,7 @@ const SubscriptionArgs: SwegonMeasurementMessage = {
         },
       },
       {
-        id: '25',
+        id: SwegonObjectId.AirQuality,
         device: '255',
         properties: {
           '85': {},
@@ -166,6 +166,13 @@ const SubscriptionArgs: SwegonMeasurementMessage = {
       },
       {
         id: SwegonObjectId.AutoHumidityControlMode,
+        device: '255',
+        properties: {
+          '85': {},
+        },
+      },
+      {
+        id: SwegonObjectId.AutoAirQualityControlMode,
         device: '255',
         properties: {
           '85': {},

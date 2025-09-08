@@ -20,9 +20,12 @@
     "measure_supply_temperature",
     "measure_ventilation_level_in",
     "measure_ventilation_level_out",
+    "measure_air_quality",
     "climate_mode",
     "summer_night_cooling_mode",
-    "auto_humidity_control_mode"
+    "auto_humidity_control_mode",
+    "auto_air_quality_control_mode",
+    "measure_boost_countdown"
   ],
   "connectivity": [
     "cloud"

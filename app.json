@@ -158,9 +158,12 @@
         "measure_supply_temperature",
         "measure_ventilation_level_in",
         "measure_ventilation_level_out",
+        "measure_air_quality",
         "climate_mode",
         "summer_night_cooling_mode",
-        "auto_humidity_control_mode"
+        "auto_humidity_control_mode",
+        "auto_air_quality_control_mode",
+        "measure_boost_countdown"
       ],
       "connectivity": [
         "cloud"
@@ -523,6 +526,71 @@
     }
   ],
   "capabilities": {
+    "auto_air_quality_control_mode": {
+      "type": "enum",
+      "uiComponent": "picker",
+      "title": {
+        "en": "Auto Air Quality Control Mode",
+        "no": "Automatisk luftkvalitet modus"
+      },
+      "desc": {
+        "en": "The current auto air quality control mode"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "off",
+          "value": 0,
+          "title": {
+            "en": "Off",
+            "no": "Av"
+          }
+        },
+        {
+          "id": "user",
+          "value": 1,
+          "title": {
+            "en": "User",
+            "no": "Bruker"
+          }
+        },
+        {
+          "id": "low",
+          "value": 2,
+          "title": {
+            "en": "Low",
+            "no": "Lav"
+          }
+        },
+        {
+          "id": "normal",
+          "value": 3,
+          "title": {
+            "en": "Normal",
+            "no": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "value": 4,
+          "title": {
+            "en": "High",
+            "no": "Høy"
+          }
+        },
+        {
+          "id": "full",
+          "value": 5,
+          "title": {
+            "en": "Full",
+            "no": "Full"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
     "auto_humidity_control_mode": {
       "type": "enum",
       "uiComponent": "picker",
@@ -656,6 +724,27 @@
       "getable": true,
       "setable": true,
       "insights": false
+    },
+    "measure_air_quality": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "icon": "/assets/air_quality.svg",
+      "title": {
+        "en": "Air Quality",
+        "no": "Luftkvalitet"
+      },
+      "desc": {
+        "en": "The quality of the air",
+        "no": "Kvaliteten av luften"
+      },
+      "units": {
+        "en": "ppm",
+        "no": "ppm"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "measure_boost_countdown": {
       "type": "number",

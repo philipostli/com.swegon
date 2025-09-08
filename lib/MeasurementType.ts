@@ -10,6 +10,7 @@ const enum MeasurementType {
   VentilationLevelOut,
   SummerNightCoolingMode,
   BoostCountDown,
+  AirQuality,
 }
 
 export default MeasurementType;

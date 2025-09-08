@@ -414,6 +414,12 @@ class SwegonClient {
                           value: parseInt(measurementValue, 10),
                         });
                         break;
+                      case SwegonObjectId.AirQuality:
+                        this.eventHandler.emit('measurement', {
+                          type: MeasurementType.AirQuality,
+                          value: parseInt(measurementValue, 10),
+                        });
+                        break;
                       case SwegonObjectId.SetFanSpeed:
                         this.eventHandler.emit('mode', {
                           id: ModeType.ClimateMode,
@@ -453,6 +459,12 @@ class SwegonClient {
                       case SwegonObjectId.AutoHumidityControlFullBoostLimit:
                         this.eventHandler.emit('setting', {
                           id: SettingType.AutoHumidityControlFullBoostLimit,
+                          value: parseInt(measurementValue, 10),
+                        });
+                        break;
+                      case SwegonObjectId.AutoAirQualityControlMode:
+                        this.eventHandler.emit('mode', {
+                          id: ModeType.AutoAirQualityControlMode,
                           value: parseInt(measurementValue, 10),
                         });
                         break;

@@ -3,6 +3,7 @@ import ClimateModes from '../../lib/ClimateModes';
 import Logger from '../../lib/logger';
 import ModeType from '../../lib/ModeType';
 import SummerNightCoolingModes from '../../lib/SummerNightCoolingModes';
+import AutoAirQualityControlModes from '../../lib/AutoAirQualityControlModes';
 
 class ModeHandler {
   private logger: Logger;
@@ -48,6 +49,16 @@ class ModeHandler {
 
       if (mode) {
         await setCapabilityValue(ModeType.AutoHumidityControlMode, mode.id);
+      } else {
+        throw new Error(`Invalid mode ${value}`);
+      }
+    } else if (id === ModeType.AutoAirQualityControlMode) {
+      const mode = AutoAirQualityControlModes.find((x) => x.value === value);
+
+      this.logger.info(`AutoAirQualityControlMode: ${value} (${mode?.id})`);
+
+      if (mode) {
+        await setCapabilityValue(ModeType.AutoAirQualityControlMode, mode.id);
       } else {
         throw new Error(`Invalid mode ${value}`);
       }

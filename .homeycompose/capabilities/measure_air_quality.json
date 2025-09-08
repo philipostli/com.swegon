@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "icon": "/assets/air_quality.svg",
+  "title": {
+    "en": "Air Quality",
+    "no": "Luftkvalitet"
+  },
+  "desc": {
+    "en": "The quality of the air",
+    "no": "Kvaliteten av luften"
+  },
+  "units": {
+    "en": "ppm",
+    "no": "ppm"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true
+}
