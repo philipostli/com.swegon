@@ -4,7 +4,7 @@
   "icon": "/assets/fan.svg",
   "title": {
     "en": "Supply Fan Speed",
-    "no": "Viftehastighet innedel"
+    "no": "Viftehastighet tilluft"
   },
   "desc": {
     "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed.",

@@ -4,7 +4,7 @@
   "icon": "/assets/fan.svg",
   "title": {
     "en": "Exhaust Fan Speed",
-    "no": "Viftehastighet utedel"
+    "no": "Viftehastighet avtrekk"
   },
   "desc": {
     "en": "The speed of the exhaust fan. Is normally higher than the supply fan speed.",

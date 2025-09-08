@@ -4,7 +4,7 @@
   "icon": "/assets/temperature_supply.svg",
   "title": {
     "en": "Supply Temperature",
-    "no": "Temperatur innedel"
+    "no": "Temperatur tilluft"
   },
   "desc": {
     "en": "The temperature of the air going out from the system into your rooms.",

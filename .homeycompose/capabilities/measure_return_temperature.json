@@ -4,7 +4,7 @@
   "icon": "/assets/temperature_return.svg",
   "title": {
     "en": "Return Temperature",
-    "no": "Returtemperatur"
+    "no": "Avtrekkstemperatur"
   },
   "desc": {
     "en": "The temperature of the air going back into the system from your rooms.",

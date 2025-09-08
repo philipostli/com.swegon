@@ -783,7 +783,7 @@
       "icon": "/assets/temperature_return.svg",
       "title": {
         "en": "Return Temperature",
-        "no": "Returtemperatur"
+        "no": "Avtrekkstemperatur"
       },
       "desc": {
         "en": "The temperature of the air going back into the system from your rooms.",
@@ -804,7 +804,7 @@
       "icon": "/assets/temperature_supply.svg",
       "title": {
         "en": "Supply Temperature",
-        "no": "Temperatur innedel"
+        "no": "Temperatur tilluft"
       },
       "desc": {
         "en": "The temperature of the air going out from the system into your rooms.",
@@ -825,7 +825,7 @@
       "icon": "/assets/fan.svg",
       "title": {
         "en": "Supply Fan Speed",
-        "no": "Viftehastighet innedel"
+        "no": "Viftehastighet tilluft"
       },
       "desc": {
         "en": "The speed of the supply fan. Is normally lower than the exhaust fan speed.",
@@ -846,7 +846,7 @@
       "icon": "/assets/fan.svg",
       "title": {
         "en": "Exhaust Fan Speed",
-        "no": "Viftehastighet utedel"
+        "no": "Viftehastighet avtrekk"
       },
       "desc": {
         "en": "The speed of the exhaust fan. Is normally higher than the supply fan speed.",
