@@ -3,7 +3,6 @@ import { SettingsChangedEvent, HomeySetting } from '../../types/homey';
 import SwegonClient from './SwegonClient';
 import SettingType from '../../lib/SettingType';
 import SummerNightCoolingBoost from '../../lib/SummerNightCoolingBoost';
-import Utils from '../../lib/Utils';
 import SwegonObjectId from '../../lib/SwegonObjectId';
 
 class SettingsHandler {
@@ -36,9 +35,10 @@ class SettingsHandler {
       );
 
       if (boost?.value != null) {
+        const numericValue = typeof boost.value === 'string' ? parseInt(boost.value, 10) : boost.value;
         await swegonClient?.setValue(
           SwegonObjectId.SummerNightCoolingBoost,
-          boost.value,
+          numericValue,
         );
       }
     }

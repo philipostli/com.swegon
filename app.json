@@ -353,7 +353,7 @@
               "values": [
                 {
                   "id": "off",
-                  "value": 0,
+                  "value": "0",
                   "label": {
                     "en": "Off",
                     "no": "Av"

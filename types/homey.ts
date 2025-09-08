@@ -26,6 +26,6 @@ export type HomeySetting = {
 
 export type HomeySettingValue = {
   id: string;
-  value?: number;
+  value?: number | string;
   label: HomeyTranslationObject;
 };
