@@ -16,6 +16,7 @@ class ModeHandler {
     id: string,
     value: any,
     setCapabilityValue: (capabilityId: string, value: any) => Promise<void>,
+    hasCapability: (capabilityId: string) => boolean,
   ): Promise<void> {
     if (id === ModeType.SummerNightCoolingMode) {
       const coolingMode = SummerNightCoolingModes.find(
@@ -58,7 +59,8 @@ class ModeHandler {
       this.logger.info(`AutoAirQualityControlMode: ${value} (${mode?.id})`);
 
       if (mode) {
-        await setCapabilityValue(ModeType.AutoAirQualityControlMode, mode.id);
+        if(hasCapability(ModeType.AutoAirQualityControlMode))
+          await setCapabilityValue(ModeType.AutoAirQualityControlMode, mode.id);
       } else {
         throw new Error(`Invalid mode ${value}`);
       }

@@ -118,6 +118,7 @@ class SwegonCasaDevice extends Homey.Device {
         data.id,
         data.value,
         this.setCapabilityValue.bind(this),
+        this.hasCapability.bind(this),
       );
     } catch (err) {
       this.logger.error(err);
