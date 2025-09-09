@@ -14,6 +14,7 @@ module.exports = {
     let humidityPercent = await selectedDevice.getCapabilityValue('measure_humidity_percent');
     let intakeTemperature = await selectedDevice.getCapabilityValue('measure_intake_temperature');
     let returnTemperature = await selectedDevice.getCapabilityValue('measure_return_temperature');
+    let airQuality = await selectedDevice.getCapabilityValue('measure_air_quality');
 
     return {
       name,
@@ -21,7 +22,8 @@ module.exports = {
       fanSpeed,
       humidityPercent,
       intakeTemperature: intakeTemperature ? Number(intakeTemperature).toFixed(1) : null,
-      returnTemperature: returnTemperature ? Number(returnTemperature).toFixed(1) : null
+      returnTemperature: returnTemperature ? Number(returnTemperature).toFixed(1) : null,
+      airQuality: airQuality ? Number(airQuality) : null
     };
   },
   async setClimateMode({ homey, query, body }) {

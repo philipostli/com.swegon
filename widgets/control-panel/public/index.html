@@ -7,6 +7,10 @@
     <h2 class="device-name homey-text-bold" id="deviceName">[name]</h2>
     <div class="main-container background">
         <div class="info-panel">
+          <div class="air-quality-corner">
+            <span class="material-icons">aq</span>
+            <span class="homey-text-small homey-color-text" id="airQuality">-</span>
+          </div>
           <div class="status-container">
             <div class="status-info">
               <div class="status-row">
@@ -62,6 +66,8 @@
         const $humidityPercent = document.getElementById('humidityPercent');
         const $intakeTemperature = document.getElementById('intakeTemperature');
         const $returnTemperature = document.getElementById('returnTemperature');
+        const $airQuality = document.getElementById('airQuality');
+        const $airQualityCorner = document.querySelector('.air-quality-corner');
 
         // Add click event listeners to all climate mode buttons
         document.querySelectorAll('.icon-button').forEach((button, index) => {
@@ -145,7 +151,8 @@
               // unitInfo.remainingTime = '01:14';
               // unitInfo.state = 'away'; 
               // unitInfo.name = 'Kjøkkenvifte';
-              //
+              // unitInfo.airQuality = 100;
+              // console.log(unitInfo);
 
               // console.log(unitInfo);
 
@@ -159,6 +166,15 @@
               $humidityPercent.textContent = unitInfo.humidityPercent || '-';
               $intakeTemperature.textContent = unitInfo.intakeTemperature + '°C' || '-';
               $returnTemperature.textContent = unitInfo.returnTemperature + '°C' || '-';
+              
+              // Handle air quality visibility
+              if (unitInfo.airQuality !== null && unitInfo.airQuality !== undefined && unitInfo.airQuality !== '') {
+                $airQuality.textContent = unitInfo.airQuality;
+                $airQualityCorner.style.display = 'flex';
+              } else {
+                $airQuality.textContent = '-';
+                $airQualityCorner.style.display = 'none';
+              }
               
               // Update selected button
               updateSelectedButton(unitInfo.state);

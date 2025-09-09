@@ -116,6 +116,7 @@ body {
   color: var(--homey-color-text);
   flex: 1;
   min-width: 0;
+  position: relative;
 }
 
 .buttons-container {
@@ -166,6 +167,29 @@ body {
 .status-value {
   word-break: break-word;
   line-height: 1.2;
+}
+
+.air-quality-corner {
+  position: absolute;
+  top: var(--homey-su-2);
+  right: var(--homey-su-2);
+  display: none;
+  align-items: center;
+  gap: var(--homey-su-1);
+  background: rgba(0, 0, 0, 0.3);
+  padding: var(--homey-su-1) var(--homey-su-2);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 5;
+}
+
+.air-quality-corner .material-icons {
+  font-size: 20px;
+}
+
+.air-quality-corner .homey-text-small {
+  font-size: 0.9em;
+  font-weight: 500;
 }
 
 
