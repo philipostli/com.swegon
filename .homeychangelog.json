@@ -4,15 +4,19 @@
     "no": "Initial Release"
   },
   "0.0.2": {
-    "en": "Fixed communication with server"
+    "en": "Fixed communication with server",
+    "no": "Fikset kommunikasjon med server"
   },
   "1.0.0": {
-    "en": "Added widget"
+    "en": "Added widget",
+    "no": "Lagt til widget"
   },
   "1.0.1": {
-    "en": "Added Air Quality Sensor"
+    "en": "Added Air Quality Sensor",
+    "no": "Lagt til luftkvalitetssensor"
   },
   "1.1.0": {
-    "en": "Add air quality to widget"
+    "en": "Add air quality to widget",
+    "no": "Legg til luftkvalitet til widget"
   }
 }
