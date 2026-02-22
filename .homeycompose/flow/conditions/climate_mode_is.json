@@ -1,0 +1,75 @@
+{
+  "id": "climate_mode_is",
+  "title": {
+    "en": "Climate mode !{{is|isn't}}",
+    "no": "Klimamodusen !{{er|ikke er}}"
+  },
+  "titleFormatted": {
+    "en": "Climate mode !{{is|isn't}} [[climate_mode]]",
+    "no": "Klimamodusen !{{er|ikke er}} [[climate_mode]]"
+  },
+  "hint": {
+    "en": "Check if the climate mode equals a specific mode.",
+    "no": "Sjekk om klimamodusen er lik en spesifikk modus."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "climate_mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Climate Mode",
+        "no": "Klimamodus"
+      },
+      "values": [
+        {
+          "id": "away",
+          "label": {
+            "en": "Away",
+            "no": "Borte"
+          }
+        },
+        {
+          "id": "home",
+          "label": {
+            "en": "Home",
+            "no": "Hjemme"
+          }
+        },
+        {
+          "id": "boost",
+          "label": {
+            "en": "Boost",
+            "no": "Boost"
+          }
+        },
+        {
+          "id": "travel",
+          "label": {
+            "en": "Travel",
+            "no": "Reise"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "no": "Av"
+          }
+        },
+        {
+          "id": "fireplace",
+          "label": {
+            "en": "Fireplace",
+            "no": "Peis"
+          }
+        }
+      ]
+    }
+  ]
+}
+

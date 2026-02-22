@@ -1,0 +1,30 @@
+{
+  "id": "climate_mode_changed",
+  "title": {
+    "en": "Climate mode changed",
+    "no": "Klimamodusen endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the climate control mode changes.",
+    "no": "Utløses når klimakontrollmodusen endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "climate_mode",
+      "type": "string",
+      "title": {
+        "en": "Climate Mode",
+        "no": "Klimamodus"
+      },
+      "example": "home"
+    }
+  ]
+}
+

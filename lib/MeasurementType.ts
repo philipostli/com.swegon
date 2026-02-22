@@ -11,6 +11,7 @@ const enum MeasurementType {
   SummerNightCoolingMode,
   BoostCountDown,
   AirQuality,
+  CO2,
 }
 
 export default MeasurementType;

@@ -5,7 +5,25 @@
     "boost": "Boost",
     "travel": "Travel",
     "fireplace": "Fireplace",
-    "fan_off": "Fan Off"
+    "fan_off": "Fan Off",
+    "off": "Off"
   },
-  "mode": "Mode"
+  "mode": "Mode",
+  "temperature": {
+    "supply": "Supply",
+    "intake": "Intake",
+    "return": "Return"
+  },
+  "ventilation": {
+    "supply": "Supply",
+    "exhaust": "Exhaust"
+  },
+  "control_mode": {
+    "off": "Off",
+    "user": "User",
+    "low": "Low",
+    "normal": "Normal",
+    "high": "High",
+    "full": "Full"
+  }
 }

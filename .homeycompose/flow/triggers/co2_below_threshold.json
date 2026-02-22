@@ -1,0 +1,46 @@
+{
+  "id": "co2_below_threshold",
+  "title": {
+    "en": "CO2 level went below",
+    "no": "CO2-nivået gikk under"
+  },
+  "titleFormatted": {
+    "en": "CO2 level went below [[threshold]] ppm",
+    "no": "CO2-nivået gikk under [[threshold]] ppm"
+  },
+  "hint": {
+    "en": "Triggers when the CO2 level goes below the specified threshold.",
+    "no": "Utløses når CO2-nivået går under den angitte grensen."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "CO2 in ppm",
+        "no": "CO2 i ppm"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "co2",
+      "type": "number",
+      "title": {
+        "en": "CO2",
+        "no": "CO2"
+      },
+      "example": 450
+    }
+  ]
+}
+

@@ -1,0 +1,38 @@
+{
+  "id": "set_temperature",
+  "title": {
+    "en": "Set target temperature",
+    "no": "Sett ønsket temperatur"
+  },
+  "titleFormatted": {
+    "en": "Set target temperature to [[temperature]] °C",
+    "no": "Sett ønsket temperatur til [[temperature]] °C"
+  },
+  "hint": {
+    "en": "Sets the supply air temperature setpoint.",
+    "no": "Setter temperaturinnstillingen for tilluft."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "no": "Temperatur"
+      },
+      "placeholder": {
+        "en": "Temperature in °C",
+        "no": "Temperatur i °C"
+      },
+      "min": 12,
+      "max": 22,
+      "step": 1
+    }
+  ]
+}
+

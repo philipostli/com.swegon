@@ -4,8 +4,26 @@
     "away": "Borte",
     "boost": "Boost",
     "travel": "Reise",
-    "fireplace": "Fyr",
-    "fan_off": "Vifte av"
+    "fireplace": "Peis",
+    "fan_off": "Vifte av",
+    "off": "Av"
   },
-  "mode": "Modus"
+  "mode": "Modus",
+  "temperature": {
+    "supply": "Tilluft",
+    "intake": "Inntak",
+    "return": "Avtrekk"
+  },
+  "ventilation": {
+    "supply": "Tilluft",
+    "exhaust": "Avtrekk"
+  },
+  "control_mode": {
+    "off": "Av",
+    "user": "Bruker",
+    "low": "Lav",
+    "normal": "Normal",
+    "high": "Høy",
+    "full": "Full"
+  }
 }

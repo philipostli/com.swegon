@@ -1,5 +1,4 @@
 import Homey from 'homey';
-import type PairSession from 'homey/lib/PairSession';
 import Logger from '../../lib/logger';
 import SwegonClient from './SwegonClient';
 import { SwegonDevice } from '../../types/swegon';
@@ -7,7 +6,7 @@ import { SwegonDevice } from '../../types/swegon';
 class SwegonCasaDriver extends Homey.Driver {
   private logger = new Logger(this.log, this.error, true);
 
-  async onPair(session: PairSession): Promise<void> {
+  async onPair(session: Homey.Driver.PairSession): Promise<void> {
     let username = '';
     let password = '';
 

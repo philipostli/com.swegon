@@ -61,7 +61,1206 @@
   "source": "https://github.com/philipostli/com.swegon",
   "homeyCommunityTopicId": 137674,
   "flow": {
+    "triggers": [
+      {
+        "id": "air_quality_changed",
+        "title": {
+          "en": "Air quality changed",
+          "no": "Luftkvaliteten endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the air quality level changes.",
+          "no": "Utløses når luftkvaliteten endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "air_quality",
+            "type": "number",
+            "title": {
+              "en": "Air Quality",
+              "no": "Luftkvalitet"
+            },
+            "example": 500
+          }
+        ]
+      },
+      {
+        "id": "climate_mode_changed",
+        "title": {
+          "en": "Climate mode changed",
+          "no": "Klimamodusen endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the climate control mode changes.",
+          "no": "Utløses når klimakontrollmodusen endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "climate_mode",
+            "type": "string",
+            "title": {
+              "en": "Climate Mode",
+              "no": "Klimamodus"
+            },
+            "example": "home"
+          }
+        ]
+      },
+      {
+        "id": "co2_above_threshold",
+        "title": {
+          "en": "CO2 level went above",
+          "no": "CO2-nivået gikk over"
+        },
+        "titleFormatted": {
+          "en": "CO2 level went above [[threshold]] ppm",
+          "no": "CO2-nivået gikk over [[threshold]] ppm"
+        },
+        "hint": {
+          "en": "Triggers when the CO2 level goes above the specified threshold.",
+          "no": "Utløses når CO2-nivået går over den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "CO2 in ppm",
+              "no": "CO2 i ppm"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2",
+              "no": "CO2"
+            },
+            "example": 450
+          }
+        ]
+      },
+      {
+        "id": "co2_below_threshold",
+        "title": {
+          "en": "CO2 level went below",
+          "no": "CO2-nivået gikk under"
+        },
+        "titleFormatted": {
+          "en": "CO2 level went below [[threshold]] ppm",
+          "no": "CO2-nivået gikk under [[threshold]] ppm"
+        },
+        "hint": {
+          "en": "Triggers when the CO2 level goes below the specified threshold.",
+          "no": "Utløses når CO2-nivået går under den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "CO2 in ppm",
+              "no": "CO2 i ppm"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2",
+              "no": "CO2"
+            },
+            "example": 450
+          }
+        ]
+      },
+      {
+        "id": "co2_changed",
+        "title": {
+          "en": "CO2 level changed",
+          "no": "CO2-nivået endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the CO2 level changes.",
+          "no": "Utløses når CO2-nivået endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2",
+              "no": "CO2"
+            },
+            "example": 450
+          }
+        ]
+      },
+      {
+        "id": "humidity_above_threshold",
+        "title": {
+          "en": "Humidity went above",
+          "no": "Luftfuktigheten gikk over"
+        },
+        "titleFormatted": {
+          "en": "Humidity went above [[threshold]]%",
+          "no": "Luftfuktigheten gikk over [[threshold]]%"
+        },
+        "hint": {
+          "en": "Triggers when the humidity goes above the specified threshold.",
+          "no": "Utløses når luftfuktigheten går over den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Humidity in %",
+              "no": "Luftfuktighet i %"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity",
+              "no": "Luftfuktighet"
+            },
+            "example": 45
+          }
+        ]
+      },
+      {
+        "id": "humidity_below_threshold",
+        "title": {
+          "en": "Humidity went below",
+          "no": "Luftfuktigheten gikk under"
+        },
+        "titleFormatted": {
+          "en": "Humidity went below [[threshold]]%",
+          "no": "Luftfuktigheten gikk under [[threshold]]%"
+        },
+        "hint": {
+          "en": "Triggers when the humidity goes below the specified threshold.",
+          "no": "Utløses når luftfuktigheten går under den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Humidity in %",
+              "no": "Luftfuktighet i %"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity",
+              "no": "Luftfuktighet"
+            },
+            "example": 45
+          }
+        ]
+      },
+      {
+        "id": "humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "no": "Luftfuktigheten endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the humidity percentage changes.",
+          "no": "Utløses når luftfuktighetsprosenten endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity",
+              "no": "Luftfuktighet"
+            },
+            "example": 45
+          }
+        ]
+      },
+      {
+        "id": "temperature_above_threshold",
+        "title": {
+          "en": "Temperature went above",
+          "no": "Temperaturen gikk over"
+        },
+        "titleFormatted": {
+          "en": "[[temperature_type]] temperature went above [[threshold]] °C",
+          "no": "[[temperature_type]] temperaturen gikk over [[threshold]] °C"
+        },
+        "hint": {
+          "en": "Triggers when the selected temperature goes above the specified threshold.",
+          "no": "Utløses når den valgte temperaturen går over den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Temperature Type",
+              "no": "Temperaturtype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "intake",
+                "label": {
+                  "en": "Intake",
+                  "no": "Inntak"
+                }
+              },
+              {
+                "id": "return",
+                "label": {
+                  "en": "Return",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Temperature in °C",
+              "no": "Temperatur i °C"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "no": "Temperatur"
+            },
+            "example": 21.5
+          }
+        ]
+      },
+      {
+        "id": "temperature_below_threshold",
+        "title": {
+          "en": "Temperature went below",
+          "no": "Temperaturen gikk under"
+        },
+        "titleFormatted": {
+          "en": "[[temperature_type]] temperature went below [[threshold]] °C",
+          "no": "[[temperature_type]] temperaturen gikk under [[threshold]] °C"
+        },
+        "hint": {
+          "en": "Triggers when the selected temperature goes below the specified threshold.",
+          "no": "Utløses når den valgte temperaturen går under den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Temperature Type",
+              "no": "Temperaturtype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "intake",
+                "label": {
+                  "en": "Intake",
+                  "no": "Inntak"
+                }
+              },
+              {
+                "id": "return",
+                "label": {
+                  "en": "Return",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Temperature in °C",
+              "no": "Temperatur i °C"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "no": "Temperatur"
+            },
+            "example": 21.5
+          }
+        ]
+      },
+      {
+        "id": "temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "no": "Temperaturen endret seg"
+        },
+        "titleFormatted": {
+          "en": "[[temperature_type]] temperature changed",
+          "no": "[[temperature_type]] temperaturen endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the selected temperature changes.",
+          "no": "Utløses når den valgte temperaturen endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Temperature Type",
+              "no": "Temperaturtype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "intake",
+                "label": {
+                  "en": "Intake",
+                  "no": "Inntak"
+                }
+              },
+              {
+                "id": "return",
+                "label": {
+                  "en": "Return",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "no": "Temperatur"
+            },
+            "example": 21.5
+          }
+        ]
+      },
+      {
+        "id": "ventilation_level_above_threshold",
+        "title": {
+          "en": "Ventilation level went above",
+          "no": "Ventilasjonsnivået gikk over"
+        },
+        "titleFormatted": {
+          "en": "[[ventilation_type]] ventilation level went above [[threshold]]%",
+          "no": "[[ventilation_type]] ventilasjonsnivået gikk over [[threshold]]%"
+        },
+        "hint": {
+          "en": "Triggers when the ventilation level goes above the specified threshold.",
+          "no": "Utløses når ventilasjonsnivået går over den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "ventilation_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Ventilation Type",
+              "no": "Ventilasjonstype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "exhaust",
+                "label": {
+                  "en": "Exhaust",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Level in %",
+              "no": "Nivå i %"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "no": "Nivå"
+            },
+            "example": 75
+          }
+        ]
+      },
+      {
+        "id": "ventilation_level_below_threshold",
+        "title": {
+          "en": "Ventilation level went below",
+          "no": "Ventilasjonsnivået gikk under"
+        },
+        "titleFormatted": {
+          "en": "[[ventilation_type]] ventilation level went below [[threshold]]%",
+          "no": "[[ventilation_type]] ventilasjonsnivået gikk under [[threshold]]%"
+        },
+        "hint": {
+          "en": "Triggers when the ventilation level goes below the specified threshold.",
+          "no": "Utløses når ventilasjonsnivået går under den angitte grensen."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "ventilation_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Ventilation Type",
+              "no": "Ventilasjonstype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "exhaust",
+                "label": {
+                  "en": "Exhaust",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Level in %",
+              "no": "Nivå i %"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "no": "Nivå"
+            },
+            "example": 75
+          }
+        ]
+      },
+      {
+        "id": "ventilation_level_changed",
+        "title": {
+          "en": "Ventilation level changed",
+          "no": "Ventilasjonsnivået endret seg"
+        },
+        "titleFormatted": {
+          "en": "[[ventilation_type]] ventilation level changed",
+          "no": "[[ventilation_type]] ventilasjonsnivået endret seg"
+        },
+        "hint": {
+          "en": "Triggers when the ventilation level (fan speed %) changes.",
+          "no": "Utløses når ventilasjonsnivået (viftehastighet %) endrer seg."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "ventilation_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Ventilation Type",
+              "no": "Ventilasjonstype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "exhaust",
+                "label": {
+                  "en": "Exhaust",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "no": "Nivå"
+            },
+            "example": 75
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "climate_mode_is",
+        "title": {
+          "en": "Climate mode !{{is|isn't}}",
+          "no": "Klimamodusen !{{er|ikke er}}"
+        },
+        "titleFormatted": {
+          "en": "Climate mode !{{is|isn't}} [[climate_mode]]",
+          "no": "Klimamodusen !{{er|ikke er}} [[climate_mode]]"
+        },
+        "hint": {
+          "en": "Check if the climate mode equals a specific mode.",
+          "no": "Sjekk om klimamodusen er lik en spesifikk modus."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "climate_mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Climate Mode",
+              "no": "Klimamodus"
+            },
+            "values": [
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "no": "Borte"
+                }
+              },
+              {
+                "id": "home",
+                "label": {
+                  "en": "Home",
+                  "no": "Hjemme"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "no": "Boost"
+                }
+              },
+              {
+                "id": "travel",
+                "label": {
+                  "en": "Travel",
+                  "no": "Reise"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "no": "Av"
+                }
+              },
+              {
+                "id": "fireplace",
+                "label": {
+                  "en": "Fireplace",
+                  "no": "Peis"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "co2_is_above",
+        "title": {
+          "en": "CO2 level !{{is|isn't}} above",
+          "no": "CO2-nivået !{{er over|er under}}"
+        },
+        "titleFormatted": {
+          "en": "CO2 level !{{is|isn't}} above [[threshold]] ppm",
+          "no": "CO2-nivået !{{er over|er under}} [[threshold]] ppm"
+        },
+        "hint": {
+          "en": "Check if the CO2 level is above a specified value.",
+          "no": "Sjekk om CO2-nivået er over en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "CO2 in ppm",
+              "no": "CO2 i ppm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "co2_is_below",
+        "title": {
+          "en": "CO2 level !{{is|isn't}} below",
+          "no": "CO2-nivået !{{er under|er over}}"
+        },
+        "titleFormatted": {
+          "en": "CO2 level !{{is|isn't}} below [[threshold]] ppm",
+          "no": "CO2-nivået !{{er under|er over}} [[threshold]] ppm"
+        },
+        "hint": {
+          "en": "Check if the CO2 level is below a specified value.",
+          "no": "Sjekk om CO2-nivået er under en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "CO2 in ppm",
+              "no": "CO2 i ppm"
+            }
+          }
+        ]
+      },
+      {
+        "id": "humidity_is_above",
+        "title": {
+          "en": "Humidity !{{is|isn't}} above",
+          "no": "Luftfuktigheten !{{er over|er under}}"
+        },
+        "titleFormatted": {
+          "en": "Humidity !{{is|isn't}} above [[threshold]]%",
+          "no": "Luftfuktigheten !{{er over|er under}} [[threshold]]%"
+        },
+        "hint": {
+          "en": "Check if the humidity is above a specified value.",
+          "no": "Sjekk om luftfuktigheten er over en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Humidity in %",
+              "no": "Luftfuktighet i %"
+            }
+          }
+        ]
+      },
+      {
+        "id": "humidity_is_below",
+        "title": {
+          "en": "Humidity !{{is|isn't}} below",
+          "no": "Luftfuktigheten !{{er under|er over}}"
+        },
+        "titleFormatted": {
+          "en": "Humidity !{{is|isn't}} below [[threshold]]%",
+          "no": "Luftfuktigheten !{{er under|er over}} [[threshold]]%"
+        },
+        "hint": {
+          "en": "Check if the humidity is below a specified value.",
+          "no": "Sjekk om luftfuktigheten er under en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Humidity in %",
+              "no": "Luftfuktighet i %"
+            }
+          }
+        ]
+      },
+      {
+        "id": "temperature_is_above",
+        "title": {
+          "en": "Temperature !{{is|isn't}} above",
+          "no": "Temperaturen !{{er over|er under}}"
+        },
+        "titleFormatted": {
+          "en": "[[temperature_type]] temperature !{{is|isn't}} above [[threshold]] °C",
+          "no": "[[temperature_type]] temperaturen !{{er over|er under}} [[threshold]] °C"
+        },
+        "hint": {
+          "en": "Check if the selected temperature is above a specified value.",
+          "no": "Sjekk om den valgte temperaturen er over en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Temperature Type",
+              "no": "Temperaturtype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "intake",
+                "label": {
+                  "en": "Intake",
+                  "no": "Inntak"
+                }
+              },
+              {
+                "id": "return",
+                "label": {
+                  "en": "Return",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Temperature in °C",
+              "no": "Temperatur i °C"
+            }
+          }
+        ]
+      },
+      {
+        "id": "temperature_is_below",
+        "title": {
+          "en": "Temperature !{{is|isn't}} below",
+          "no": "Temperaturen !{{er under|er over}}"
+        },
+        "titleFormatted": {
+          "en": "[[temperature_type]] temperature !{{is|isn't}} below [[threshold]] °C",
+          "no": "[[temperature_type]] temperaturen !{{er under|er over}} [[threshold]] °C"
+        },
+        "hint": {
+          "en": "Check if the selected temperature is below a specified value.",
+          "no": "Sjekk om den valgte temperaturen er under en angitt verdi."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Temperature Type",
+              "no": "Temperaturtype"
+            },
+            "values": [
+              {
+                "id": "supply",
+                "label": {
+                  "en": "Supply",
+                  "no": "Tilluft"
+                }
+              },
+              {
+                "id": "intake",
+                "label": {
+                  "en": "Intake",
+                  "no": "Inntak"
+                }
+              },
+              {
+                "id": "return",
+                "label": {
+                  "en": "Return",
+                  "no": "Avtrekk"
+                }
+              }
+            ]
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "no": "Grenseverdi"
+            },
+            "placeholder": {
+              "en": "Temperature in °C",
+              "no": "Temperatur i °C"
+            }
+          }
+        ]
+      }
+    ],
     "actions": [
+      {
+        "id": "set_auto_air_quality_control_mode",
+        "title": {
+          "en": "Set auto air quality control mode",
+          "no": "Sett automatisk luftkvalitetsmodus"
+        },
+        "titleFormatted": {
+          "en": "Set auto air quality control mode to [[mode]]",
+          "no": "Sett automatisk luftkvalitetsmodus til [[mode]]"
+        },
+        "hint": {
+          "en": "Sets the auto air quality control mode.",
+          "no": "Setter automatisk luftkvalitetsmodus."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "no": "Modus"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "no": "Av"
+                }
+              },
+              {
+                "id": "user",
+                "label": {
+                  "en": "User",
+                  "no": "Bruker"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "no": "Lav"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal",
+                  "no": "Normal"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "no": "Høy"
+                }
+              },
+              {
+                "id": "full",
+                "label": {
+                  "en": "Full",
+                  "no": "Full"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_auto_humidity_control_mode",
+        "title": {
+          "en": "Set auto humidity control mode",
+          "no": "Sett automatisk luftfuktighetsmodus"
+        },
+        "titleFormatted": {
+          "en": "Set auto humidity control mode to [[mode]]",
+          "no": "Sett automatisk luftfuktighetsmodus til [[mode]]"
+        },
+        "hint": {
+          "en": "Sets the auto humidity control mode.",
+          "no": "Setter automatisk luftfuktighetsmodus."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "no": "Modus"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "no": "Av"
+                }
+              },
+              {
+                "id": "user",
+                "label": {
+                  "en": "User",
+                  "no": "Bruker"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "no": "Lav"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal",
+                  "no": "Normal"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "no": "Høy"
+                }
+              },
+              {
+                "id": "full",
+                "label": {
+                  "en": "Full",
+                  "no": "Full"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "set_climate_mode",
         "title": {
@@ -132,6 +1331,117 @@
             ]
           }
         ]
+      },
+      {
+        "id": "set_summer_night_cooling_mode",
+        "title": {
+          "en": "Set summer night cooling mode",
+          "no": "Sett sommernatt avkjølingsmodus"
+        },
+        "titleFormatted": {
+          "en": "Set summer night cooling mode to [[mode]]",
+          "no": "Sett sommernatt avkjølingsmodus til [[mode]]"
+        },
+        "hint": {
+          "en": "Sets the summer night cooling mode.",
+          "no": "Setter sommernatt avkjølingsmodus."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "no": "Modus"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "no": "Av"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "no": "Lav"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal",
+                  "no": "Normal"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "no": "Høy"
+                }
+              },
+              {
+                "id": "full",
+                "label": {
+                  "en": "Full",
+                  "no": "Full"
+                }
+              },
+              {
+                "id": "user",
+                "label": {
+                  "en": "User",
+                  "no": "Bruker"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "no": "Sett ønsket temperatur"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature to [[temperature]] °C",
+          "no": "Sett ønsket temperatur til [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Sets the supply air temperature setpoint.",
+          "no": "Setter temperaturinnstillingen for tilluft."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=swegoncasa"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "no": "Temperatur"
+            },
+            "placeholder": {
+              "en": "Temperature in °C",
+              "no": "Temperatur i °C"
+            },
+            "min": 12,
+            "max": 22,
+            "step": 1
+          }
+        ]
       }
     ]
   },
@@ -151,6 +1461,7 @@
         "local"
       ],
       "capabilities": [
+        "target_temperature",
         "measure_humidity_percent",
         "measure_humidity_amount",
         "measure_return_temperature",
@@ -159,6 +1470,7 @@
         "measure_ventilation_level_in",
         "measure_ventilation_level_out",
         "measure_air_quality",
+        "measure_co2",
         "climate_mode",
         "summer_night_cooling_mode",
         "auto_humidity_control_mode",
@@ -442,6 +1754,49 @@
               "hint": {
                 "en": "Decrease full boost limit if more boost is wanted. Full boost limit defines how much humidity value must rise over average before full boosting is reached.",
                 "no": "Reduser full boostgrense hvis du ønsker mer boost. Full boostgrense definerer hvor mye fuktighetsverdien må stige over gjennomsnittet før full boost er oppnådd."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "CO2 Control",
+            "no": "CO2 Kontroll"
+          },
+          "children": [
+            {
+              "id": "co2HomeLimit",
+              "type": "number",
+              "value": 550,
+              "units": {
+                "en": "ppm",
+                "no": "ppm"
+              },
+              "label": {
+                "en": "CO2 Home Limit",
+                "no": "CO2 Hjemme-grense"
+              },
+              "hint": {
+                "en": "CO2 level threshold for Home mode in the Auto Home/Away/Boost feature",
+                "no": "CO2-nivågrense for Hjemme-modus i Auto Hjemme/Borte/Boost-funksjonen"
+              }
+            },
+            {
+              "id": "co2AwayLimit",
+              "type": "number",
+              "value": 400,
+              "units": {
+                "en": "ppm",
+                "no": "ppm"
+              },
+              "label": {
+                "en": "CO2 Away Limit",
+                "no": "CO2 Borte-grense"
+              },
+              "hint": {
+                "en": "CO2 level threshold for Away mode in the Auto Home/Away/Boost feature",
+                "no": "CO2-nivågrense for Borte-modus i Auto Hjemme/Borte/Boost-funksjonen"
               }
             }
           ]
@@ -793,6 +2148,26 @@
       "setable": false,
       "insights": true
     },
+    "measure_co2": {
+      "type": "number",
+      "uiComponent": "sensor",
+      "title": {
+        "en": "CO2",
+        "no": "CO2"
+      },
+      "desc": {
+        "en": "Carbon dioxide level",
+        "no": "Karbondioksidnivå"
+      },
+      "units": {
+        "en": "ppm",
+        "no": "ppm"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
     "measure_fan_speed": {
       "type": "enum",
       "uiComponent": "sensor",
@@ -1042,6 +2417,29 @@
       "getable": true,
       "setable": true,
       "insights": false
+    },
+    "target_temperature": {
+      "type": "number",
+      "uiComponent": "thermostat",
+      "title": {
+        "en": "Target Temperature",
+        "no": "Ønsket temperatur"
+      },
+      "desc": {
+        "en": "The target supply air temperature setpoint",
+        "no": "Ønsket temperaturinnstilling for tilluft"
+      },
+      "units": {
+        "en": "°C",
+        "no": "°C"
+      },
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "decimals": 0,
+      "getable": true,
+      "setable": true,
+      "insights": true
     }
   }
 }

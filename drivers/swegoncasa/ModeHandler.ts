@@ -59,7 +59,7 @@ class ModeHandler {
       this.logger.info(`AutoAirQualityControlMode: ${value} (${mode?.id})`);
 
       if (mode) {
-        if(hasCapability(ModeType.AutoAirQualityControlMode))
+        if (hasCapability(ModeType.AutoAirQualityControlMode))
           await setCapabilityValue(ModeType.AutoAirQualityControlMode, mode.id);
       } else {
         throw new Error(`Invalid mode ${value}`);

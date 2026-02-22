@@ -67,7 +67,7 @@ const SubscriptionArgs: SwegonMeasurementMessage = {
         },
       },
       {
-        id: '21',
+        id: SwegonObjectId.CO2,
         device: '255',
         properties: {
           '85': {},
@@ -208,6 +208,20 @@ const SubscriptionArgs: SwegonMeasurementMessage = {
       },
       {
         id: SwegonObjectId.AwayModeTemperatureDrop,
+        device: '255',
+        properties: {
+          '85': {},
+        },
+      },
+      {
+        id: SwegonObjectId.CO2HomeLimit,
+        device: '255',
+        properties: {
+          '85': {},
+        },
+      },
+      {
+        id: SwegonObjectId.CO2AwayLimit,
         device: '255',
         properties: {
           '85': {},

@@ -1,0 +1,65 @@
+{
+  "id": "temperature_changed",
+  "title": {
+    "en": "Temperature changed",
+    "no": "Temperaturen endret seg"
+  },
+  "titleFormatted": {
+    "en": "[[temperature_type]] temperature changed",
+    "no": "[[temperature_type]] temperaturen endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the selected temperature changes.",
+    "no": "Utløses når den valgte temperaturen endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "temperature_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Temperature Type",
+        "no": "Temperaturtype"
+      },
+      "values": [
+        {
+          "id": "supply",
+          "label": {
+            "en": "Supply",
+            "no": "Tilluft"
+          }
+        },
+        {
+          "id": "intake",
+          "label": {
+            "en": "Intake",
+            "no": "Inntak"
+          }
+        },
+        {
+          "id": "return",
+          "label": {
+            "en": "Return",
+            "no": "Avtrekk"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "no": "Temperatur"
+      },
+      "example": 21.5
+    }
+  ]
+}
+

@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "uiComponent": "thermostat",
+  "title": {
+    "en": "Target Temperature",
+    "no": "Ønsket temperatur"
+  },
+  "desc": {
+    "en": "The target supply air temperature setpoint",
+    "no": "Ønsket temperaturinnstilling for tilluft"
+  },
+  "units": {
+    "en": "°C",
+    "no": "°C"
+  },
+  "min": 12,
+  "max": 22,
+  "step": 1,
+  "decimals": 0,
+  "getable": true,
+  "setable": true,
+  "insights": true
+}
+

@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "uiComponent": "sensor",
+  "title": {
+    "en": "CO2",
+    "no": "CO2"
+  },
+  "desc": {
+    "en": "Carbon dioxide level",
+    "no": "Karbondioksidnivå"
+  },
+  "units": {
+    "en": "ppm",
+    "no": "ppm"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": true
+}
+

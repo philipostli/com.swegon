@@ -1,0 +1,30 @@
+{
+  "id": "co2_changed",
+  "title": {
+    "en": "CO2 level changed",
+    "no": "CO2-nivået endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the CO2 level changes.",
+    "no": "Utløses når CO2-nivået endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "co2",
+      "type": "number",
+      "title": {
+        "en": "CO2",
+        "no": "CO2"
+      },
+      "example": 450
+    }
+  ]
+}
+

@@ -1,0 +1,58 @@
+{
+  "id": "ventilation_level_changed",
+  "title": {
+    "en": "Ventilation level changed",
+    "no": "Ventilasjonsnivået endret seg"
+  },
+  "titleFormatted": {
+    "en": "[[ventilation_type]] ventilation level changed",
+    "no": "[[ventilation_type]] ventilasjonsnivået endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the ventilation level (fan speed %) changes.",
+    "no": "Utløses når ventilasjonsnivået (viftehastighet %) endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "ventilation_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Ventilation Type",
+        "no": "Ventilasjonstype"
+      },
+      "values": [
+        {
+          "id": "supply",
+          "label": {
+            "en": "Supply",
+            "no": "Tilluft"
+          }
+        },
+        {
+          "id": "exhaust",
+          "label": {
+            "en": "Exhaust",
+            "no": "Avtrekk"
+          }
+        }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "level",
+      "type": "number",
+      "title": {
+        "en": "Level",
+        "no": "Nivå"
+      },
+      "example": 75
+    }
+  ]
+}
+

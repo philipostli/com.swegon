@@ -2,6 +2,7 @@ const enum SwegonObjectId {
   SupplyTemperature = '17',
   OutputTemperature = '18',
   IntakeTemperature = '19',
+  CO2 = '21',
   Humidity = '22',
   HumidityAmount = '23',
   AirQuality = '25',
@@ -21,6 +22,8 @@ const enum SwegonObjectId {
   SupplyTemperatureSetpoint = '163',
   TemperatureControlMode = '164',
   AwayModeTemperatureDrop = '165',
+  CO2HomeLimit = '122',
+  CO2AwayLimit = '123',
   Device = '500',
 }
 

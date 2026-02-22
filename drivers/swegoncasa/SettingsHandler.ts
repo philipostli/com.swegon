@@ -82,6 +82,22 @@ class SettingsHandler {
         newSettings[SettingType.SupplyTemperatureSetpoint],
       );
     }
+
+    // CO2 Home Limit
+    if (newSettings[SettingType.CO2HomeLimit]) {
+      await swegonClient?.setValue(
+        SwegonObjectId.CO2HomeLimit,
+        newSettings[SettingType.CO2HomeLimit],
+      );
+    }
+
+    // CO2 Away Limit
+    if (newSettings[SettingType.CO2AwayLimit]) {
+      await swegonClient?.setValue(
+        SwegonObjectId.CO2AwayLimit,
+        newSettings[SettingType.CO2AwayLimit],
+      );
+    }
   }
 
   public async HandleDeviceSettingChanged(
@@ -109,6 +125,11 @@ class SettingsHandler {
       if (boost) {
         newSetting[SettingType.SummerNightCoolingBoost] = boost.id;
       }
+    }
+
+    // Supply Temperature Setpoint - also update the capability
+    if (newSetting[SettingType.SupplyTemperatureSetpoint]) {
+      await setCapabilityValue('target_temperature', newSetting[SettingType.SupplyTemperatureSetpoint]);
     }
 
     await setSettings(newSetting);

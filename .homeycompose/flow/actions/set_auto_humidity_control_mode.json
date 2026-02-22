@@ -1,0 +1,75 @@
+{
+  "id": "set_auto_humidity_control_mode",
+  "title": {
+    "en": "Set auto humidity control mode",
+    "no": "Sett automatisk luftfuktighetsmodus"
+  },
+  "titleFormatted": {
+    "en": "Set auto humidity control mode to [[mode]]",
+    "no": "Sett automatisk luftfuktighetsmodus til [[mode]]"
+  },
+  "hint": {
+    "en": "Sets the auto humidity control mode.",
+    "no": "Setter automatisk luftfuktighetsmodus."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "no": "Modus"
+      },
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "no": "Av"
+          }
+        },
+        {
+          "id": "user",
+          "label": {
+            "en": "User",
+            "no": "Bruker"
+          }
+        },
+        {
+          "id": "low",
+          "label": {
+            "en": "Low",
+            "no": "Lav"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "Normal",
+            "no": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High",
+            "no": "Høy"
+          }
+        },
+        {
+          "id": "full",
+          "label": {
+            "en": "Full",
+            "no": "Full"
+          }
+        }
+      ]
+    }
+  ]
+}
+

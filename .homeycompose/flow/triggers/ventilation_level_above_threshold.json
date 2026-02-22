@@ -1,0 +1,70 @@
+{
+  "id": "ventilation_level_above_threshold",
+  "title": {
+    "en": "Ventilation level went above",
+    "no": "Ventilasjonsnivået gikk over"
+  },
+  "titleFormatted": {
+    "en": "[[ventilation_type]] ventilation level went above [[threshold]]%",
+    "no": "[[ventilation_type]] ventilasjonsnivået gikk over [[threshold]]%"
+  },
+  "hint": {
+    "en": "Triggers when the ventilation level goes above the specified threshold.",
+    "no": "Utløses når ventilasjonsnivået går over den angitte grensen."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "ventilation_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Ventilation Type",
+        "no": "Ventilasjonstype"
+      },
+      "values": [
+        {
+          "id": "supply",
+          "label": {
+            "en": "Supply",
+            "no": "Tilluft"
+          }
+        },
+        {
+          "id": "exhaust",
+          "label": {
+            "en": "Exhaust",
+            "no": "Avtrekk"
+          }
+        }
+      ]
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "Level in %",
+        "no": "Nivå i %"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "level",
+      "type": "number",
+      "title": {
+        "en": "Level",
+        "no": "Nivå"
+      },
+      "example": 75
+    }
+  ]
+}
+

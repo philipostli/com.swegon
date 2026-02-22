@@ -1,0 +1,46 @@
+{
+  "id": "humidity_above_threshold",
+  "title": {
+    "en": "Humidity went above",
+    "no": "Luftfuktigheten gikk over"
+  },
+  "titleFormatted": {
+    "en": "Humidity went above [[threshold]]%",
+    "no": "Luftfuktigheten gikk over [[threshold]]%"
+  },
+  "hint": {
+    "en": "Triggers when the humidity goes above the specified threshold.",
+    "no": "Utløses når luftfuktigheten går over den angitte grensen."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "Humidity in %",
+        "no": "Luftfuktighet i %"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "humidity",
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "no": "Luftfuktighet"
+      },
+      "example": 45
+    }
+  ]
+}
+

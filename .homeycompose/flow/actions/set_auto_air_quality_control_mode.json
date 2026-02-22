@@ -1,0 +1,75 @@
+{
+  "id": "set_auto_air_quality_control_mode",
+  "title": {
+    "en": "Set auto air quality control mode",
+    "no": "Sett automatisk luftkvalitetsmodus"
+  },
+  "titleFormatted": {
+    "en": "Set auto air quality control mode to [[mode]]",
+    "no": "Sett automatisk luftkvalitetsmodus til [[mode]]"
+  },
+  "hint": {
+    "en": "Sets the auto air quality control mode.",
+    "no": "Setter automatisk luftkvalitetsmodus."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "no": "Modus"
+      },
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "no": "Av"
+          }
+        },
+        {
+          "id": "user",
+          "label": {
+            "en": "User",
+            "no": "Bruker"
+          }
+        },
+        {
+          "id": "low",
+          "label": {
+            "en": "Low",
+            "no": "Lav"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "Normal",
+            "no": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High",
+            "no": "Høy"
+          }
+        },
+        {
+          "id": "full",
+          "label": {
+            "en": "Full",
+            "no": "Full"
+          }
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,66 @@
+{
+  "id": "temperature_is_below",
+  "title": {
+    "en": "Temperature !{{is|isn't}} below",
+    "no": "Temperaturen !{{er under|er over}}"
+  },
+  "titleFormatted": {
+    "en": "[[temperature_type]] temperature !{{is|isn't}} below [[threshold]] °C",
+    "no": "[[temperature_type]] temperaturen !{{er under|er over}} [[threshold]] °C"
+  },
+  "hint": {
+    "en": "Check if the selected temperature is below a specified value.",
+    "no": "Sjekk om den valgte temperaturen er under en angitt verdi."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "temperature_type",
+      "type": "dropdown",
+      "title": {
+        "en": "Temperature Type",
+        "no": "Temperaturtype"
+      },
+      "values": [
+        {
+          "id": "supply",
+          "label": {
+            "en": "Supply",
+            "no": "Tilluft"
+          }
+        },
+        {
+          "id": "intake",
+          "label": {
+            "en": "Intake",
+            "no": "Inntak"
+          }
+        },
+        {
+          "id": "return",
+          "label": {
+            "en": "Return",
+            "no": "Avtrekk"
+          }
+        }
+      ]
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "Temperature in °C",
+        "no": "Temperatur i °C"
+      }
+    }
+  ]
+}
+

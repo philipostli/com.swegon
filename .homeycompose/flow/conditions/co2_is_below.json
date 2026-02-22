@@ -1,0 +1,35 @@
+{
+  "id": "co2_is_below",
+  "title": {
+    "en": "CO2 level !{{is|isn't}} below",
+    "no": "CO2-nivået !{{er under|er over}}"
+  },
+  "titleFormatted": {
+    "en": "CO2 level !{{is|isn't}} below [[threshold]] ppm",
+    "no": "CO2-nivået !{{er under|er over}} [[threshold]] ppm"
+  },
+  "hint": {
+    "en": "Check if the CO2 level is below a specified value.",
+    "no": "Sjekk om CO2-nivået er under en angitt verdi."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "CO2 in ppm",
+        "no": "CO2 i ppm"
+      }
+    }
+  ]
+}
+

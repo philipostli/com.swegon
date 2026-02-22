@@ -1,0 +1,30 @@
+{
+  "id": "humidity_changed",
+  "title": {
+    "en": "Humidity changed",
+    "no": "Luftfuktigheten endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the humidity percentage changes.",
+    "no": "Utløses når luftfuktighetsprosenten endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "humidity",
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "no": "Luftfuktighet"
+      },
+      "example": 45
+    }
+  ]
+}
+

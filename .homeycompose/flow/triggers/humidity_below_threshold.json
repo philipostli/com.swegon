@@ -1,0 +1,46 @@
+{
+  "id": "humidity_below_threshold",
+  "title": {
+    "en": "Humidity went below",
+    "no": "Luftfuktigheten gikk under"
+  },
+  "titleFormatted": {
+    "en": "Humidity went below [[threshold]]%",
+    "no": "Luftfuktigheten gikk under [[threshold]]%"
+  },
+  "hint": {
+    "en": "Triggers when the humidity goes below the specified threshold.",
+    "no": "Utløses når luftfuktigheten går under den angitte grensen."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "Humidity in %",
+        "no": "Luftfuktighet i %"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "humidity",
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "no": "Luftfuktighet"
+      },
+      "example": 45
+    }
+  ]
+}
+

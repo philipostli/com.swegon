@@ -1,0 +1,75 @@
+{
+  "id": "set_summer_night_cooling_mode",
+  "title": {
+    "en": "Set summer night cooling mode",
+    "no": "Sett sommernatt avkjølingsmodus"
+  },
+  "titleFormatted": {
+    "en": "Set summer night cooling mode to [[mode]]",
+    "no": "Sett sommernatt avkjølingsmodus til [[mode]]"
+  },
+  "hint": {
+    "en": "Sets the summer night cooling mode.",
+    "no": "Setter sommernatt avkjølingsmodus."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "title": {
+        "en": "Mode",
+        "no": "Modus"
+      },
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "no": "Av"
+          }
+        },
+        {
+          "id": "low",
+          "label": {
+            "en": "Low",
+            "no": "Lav"
+          }
+        },
+        {
+          "id": "normal",
+          "label": {
+            "en": "Normal",
+            "no": "Normal"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High",
+            "no": "Høy"
+          }
+        },
+        {
+          "id": "full",
+          "label": {
+            "en": "Full",
+            "no": "Full"
+          }
+        },
+        {
+          "id": "user",
+          "label": {
+            "en": "User",
+            "no": "Bruker"
+          }
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "id": "air_quality_changed",
+  "title": {
+    "en": "Air quality changed",
+    "no": "Luftkvaliteten endret seg"
+  },
+  "hint": {
+    "en": "Triggers when the air quality level changes.",
+    "no": "Utløses når luftkvaliteten endrer seg."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "air_quality",
+      "type": "number",
+      "title": {
+        "en": "Air Quality",
+        "no": "Luftkvalitet"
+      },
+      "example": 500
+    }
+  ]
+}
+

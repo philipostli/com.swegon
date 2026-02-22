@@ -242,6 +242,49 @@
   {
     "type": "group",
     "label": {
+      "en": "CO2 Control",
+      "no": "CO2 Kontroll"
+    },
+    "children": [
+      {
+        "id": "co2HomeLimit",
+        "type": "number",
+        "value": 550,
+        "units": {
+          "en": "ppm",
+          "no": "ppm"
+        },
+        "label": {
+          "en": "CO2 Home Limit",
+          "no": "CO2 Hjemme-grense"
+        },
+        "hint": {
+          "en": "CO2 level threshold for Home mode in the Auto Home/Away/Boost feature",
+          "no": "CO2-nivågrense for Hjemme-modus i Auto Hjemme/Borte/Boost-funksjonen"
+        }
+      },
+      {
+        "id": "co2AwayLimit",
+        "type": "number",
+        "value": 400,
+        "units": {
+          "en": "ppm",
+          "no": "ppm"
+        },
+        "label": {
+          "en": "CO2 Away Limit",
+          "no": "CO2 Borte-grense"
+        },
+        "hint": {
+          "en": "CO2 level threshold for Away mode in the Auto Home/Away/Boost feature",
+          "no": "CO2-nivågrense for Borte-modus i Auto Hjemme/Borte/Boost-funksjonen"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
       "en": "Device Info",
       "no": "Enhetsinfo"
     },

@@ -1,0 +1,35 @@
+{
+  "id": "humidity_is_above",
+  "title": {
+    "en": "Humidity !{{is|isn't}} above",
+    "no": "Luftfuktigheten !{{er over|er under}}"
+  },
+  "titleFormatted": {
+    "en": "Humidity !{{is|isn't}} above [[threshold]]%",
+    "no": "Luftfuktigheten !{{er over|er under}} [[threshold]]%"
+  },
+  "hint": {
+    "en": "Check if the humidity is above a specified value.",
+    "no": "Sjekk om luftfuktigheten er over en angitt verdi."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=swegoncasa"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "no": "Grenseverdi"
+      },
+      "placeholder": {
+        "en": "Humidity in %",
+        "no": "Luftfuktighet i %"
+      }
+    }
+  ]
+}
+

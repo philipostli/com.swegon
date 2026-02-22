@@ -5,11 +5,11 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: ['athom', 'eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ['athom/homey-app', 'eslint:recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     sourceType: 'module',
   },
-  ignorePatterns: ['node_modules/*', 'build/*'],
+  ignorePatterns: ['node_modules/*', 'build/*', '.eslintrc.js'],
   plugins: ['@typescript-eslint', 'prettier'],
   settings: {
     node: {

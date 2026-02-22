@@ -10,7 +10,7 @@
     "sourceMap": true,
     "skipLibCheck": false,
     "allowJs": true,
-    "outDir": "build/"
+    "outDir": "./.homeybuild"
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
