@@ -11,9 +11,13 @@ on:
           - major
           - minor
           - patch
-      changelog:
+      changelog_en:
         type: string
-        description: Changelog
+        description: Changelog in English
+        required: true
+      changelog_no:
+        type: string
+        description: Changelog in Norwegian
         required: true
 
 jobs:
@@ -24,11 +28,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Update app version
-        uses: athombv/github-action-homey-app-version@master
+        uses: philipostli/github-action-homey-app-version@support-multiple-language-changelogs
         id: update_app_version
         with:
           version: ${{ inputs.version }}
-          changelog: ${{ inputs.changelog }}
+          changelog_no: ${{ inputs.changelog_no }}
+          changelog_en: ${{ inputs.changelog_en }}
 
       - name: Commit and push generated version
         uses: stefanzweifel/git-auto-commit-action@v5
