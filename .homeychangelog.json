@@ -22,5 +22,9 @@
   "1.1.1": {
     "en": "Add CO2 capability, and limits. Add target temperature capability. Add 14 new trigger cards, 7 condition cards, and 4 action cards",
     "no": "Lagt til CO2 capability og grenseverdier.. Lagt til ønsket temperatur. som capability. Lagt til 14 nye trigger kort, 7 tilstandskort, og 4 action-kort."
+  },
+  "1.1.2": {
+    "en": "Updated Norwegian translations",
+    "no": "Oppdatert norske oversettelser"
   }
 }
